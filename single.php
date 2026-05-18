@@ -69,10 +69,10 @@ include('header.php'); ?>
 
 
             <!--Calculo de las inplemetaciones  -->
-            <?php include get_template_directory() . '/functions-theme/calculo.php'; ?>
+            <?php include get_template_directory() . '/inc/calculo.php'; ?>
 
             <!--Variables de datos API -->
-            <?php include get_template_directory() . '/functions-theme/variables-datos.php'; ?>
+            <?php include get_template_directory() . '/inc/variables-datos.php'; ?>
 
 
 
