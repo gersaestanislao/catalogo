@@ -1,0 +1,18 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+.breadcrumb {
+    padding-bottom: 0;
+    font-size: 14px;
+    margin-left: 16px;
+
+    @include mix.respond-to(md)  {
+    font-size: 16px; 
+    }
+  }
+  
+  .breadcrumb>li+li:before {
+    font-size: 16px;
+  }
+  

@@ -1,0 +1,62 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.boton {
+  justify-content: center;
+  align-items: center;
+  border-radius: 3.107px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+}
+.boton--primario {
+  background: #005d4f;
+  color: white;
+  border: 1px solid #005d4f;
+}
+.boton--primario i {
+  color: white;
+}
+.boton--primario:hover {
+  background-color: #13322e;
+  color: white;
+}
+.boton--transparente {
+  background: white;
+  color: #005d4f;
+  border: 1px solid #005d4f;
+}
+.boton--transparente:hover {
+  color: #005d4f;
+  background-color: #f5f5f5;
+  border: 1px solid #005d4f;
+}
+.boton--link {
+  background-color: transparent;
+  color: #005d4f;
+  border: 0;
+  font-size: 16px;
+}
+.boton--link:hover {
+  color: #13322e;
+}
+.boton--pequeno {
+  width: 116.5px;
+  height: 41.067px;
+  gap: 7.767px;
+  font-size: 0.9rem;
+}
+.boton--icon {
+  align-items: baseline;
+}
+.boton--icon i {
+  font-size: 16px;
+  margin-left: 8px;
+}

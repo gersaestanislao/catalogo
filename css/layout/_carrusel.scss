@@ -1,0 +1,137 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+.hero {
+  position: relative;
+  padding: 32px 0;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    margin-bottom: 32px;
+  }
+
+  &__carousel {
+    overflow: hidden;
+  }
+
+  &__slide {
+    position: relative;
+    height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      height: 320px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(30, 30, 30, 0.75) 0%,
+      rgba(30, 30, 30, 0.4) 50%,
+      rgba(30, 30, 30, 0) 100%
+    );
+    z-index: 2;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+    padding: 0 3rem;
+    color: white;
+
+    @media (min-width: 1200px) {
+      padding: 0 8rem;
+      max-width: 80%;
+    }
+  }
+
+  &__title {
+    font-size: 2.7777rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+
+    @media (min-width: 991px) {
+      font-size: 3.2rem;
+    }
+
+ 
+  }
+  
+  &__descript {
+    margin: 0 0 4rem;
+  }
+
+
+  /* Controles */
+
+  &__controls {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  &__arrow {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid #333;
+      border-right: 2px solid #333;
+      transform: rotate(45deg);
+      margin: auto;
+    }
+
+    &--prev::before {
+      transform: rotate(-135deg);
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: 8px;
+
+    .owl-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ccc;
+      border: 0;
+
+      &.active {
+        background: #333;
+      }
+      
+    }
+  }
+}

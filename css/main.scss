@@ -1,0 +1,29 @@
+// Base 
+@use 'base';
+@use 'botones';
+
+// Librerias
+@use 'libs/owl.carousel';
+
+// Containers
+@use 'containers';
+
+// Estructura 
+@use 'layout/_carrusel';
+@use 'layout/_carrusel_home';
+@use 'layout/_main';
+@use 'layout/_features';
+@use 'layout/_footer';
+@use 'layout/_single';
+
+// componentes 
+@use 'components/_catalogo';
+@use 'components/_cards';
+@use 'components/_filtros';
+@use 'components/_breadcrumbs';
+@use 'components/_paginador';
+@use 'components/_search';
+@use 'components/_acces-courses';
+@use 'components/_help-widget'; 
+
+

@@ -1,0 +1,120 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+.footer-deps {
+    background: #0f3d2e;
+    color: #fff;
+    padding: 64px 0;
+    border-top: 4px solid vars.$color-secundario;
+  
+    a {
+      color: inherit;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    &__top {
+      display: grid;
+      gap: 4rem;
+  
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+  
+      @media (min-width: 1024px) {
+        grid-template-columns: 1.3fr 1fr 1fr;
+      }
+    }
+  
+    &__col {
+      &--contacto {
+        .footer__item {
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+  
+    &__title {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+  
+    &__links {
+      list-style: none;
+      padding: 0;
+
+  
+      li {
+        margin-bottom: 8px;
+      }
+  
+      a {
+        text-decoration: underline;
+        font-size: 16px;
+      }
+    }
+  
+    &__contact {
+      list-style: none;
+      padding: 0;
+    }
+  
+    &__item {
+      line-height: 1.7;
+      text-align: left;
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+
+      i {
+        color: vars.$color-secundario;
+        font-size: 22px;
+      }
+
+    }
+  
+    &__divider {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      margin: 2rem auto;
+    }
+  
+    &__bottom {
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+  
+    &__nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+  
+      a {
+        font-size: 16px;
+        text-decoration: underline;
+      }
+    }
+  
+    &__copy {
+      margin-bottom: 1rem;
+    }
+  
+    &__social {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+  
+      a {
+         color: vars.$color-secundario;
+         font-size: 22px;
+      }
+    }
+  }

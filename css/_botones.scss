@@ -1,0 +1,72 @@
+// Importación de utilidades base
+@use 'variables' as vars;
+@use 'mixins' as mix;
+
+.boton {
+    justify-content: center;
+    align-items: center;
+    border-radius: 3.107px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+
+    // tipo 
+    &--primario {
+        background:  vars.$color-primario--suave;
+        color:  white; 
+        border: 1px solid vars.$color-primario--suave;
+
+        i {
+            color: white;
+        }
+
+        &:hover {
+            background-color: vars.$color-primario;
+            color: white;
+        }
+    }
+
+
+    &--transparente {
+        background:  white;
+        color: vars.$color-primario--suave;
+        border: 1px solid vars.$color-primario--suave;
+        
+
+        &:hover {
+            color: vars.$color-primario--suave;
+            background-color: vars.$gris-suave;
+            border: 1px solid vars.$color-primario--suave;
+        }
+    }
+
+    &--link {
+        background-color: transparent;
+        color: vars.$color-primario--suave;
+        border: 0;
+        font-size: 16px;
+
+        &:hover {
+            color: vars.$color-primario;
+    
+        }
+    }
+
+
+    // tamaño 
+    &--pequeno {
+        width: 116.5px;
+        height: 41.067px;
+        gap: 7.767px;
+        font-size: .9rem;
+    }
+
+    //icon
+    &--icon {
+        align-items: baseline;
+        i {
+            font-size: 16px;
+            margin-left: 8px;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero {
+  position: relative;
+  padding: 32px 0;
+  /* Controles */
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 0;
+    margin-bottom: 32px;
+  }
+}
+.hero__carousel {
+  overflow: hidden;
+}
+.hero__slide {
+  position: relative;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .hero__slide {
+    height: 320px;
+  }
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(30, 30, 30, 0.75) 0%, rgba(30, 30, 30, 0.4) 50%, rgba(30, 30, 30, 0) 100%);
+  z-index: 2;
+}
+.hero__content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  padding: 0 3rem;
+  color: white;
+}
+@media (min-width: 1200px) {
+  .hero__content {
+    padding: 0 8rem;
+    max-width: 80%;
+  }
+}
+.hero__title {
+  font-size: 2.7777rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+@media (min-width: 991px) {
+  .hero__title {
+    font-size: 3.2rem;
+  }
+}
+.hero__descript {
+  margin: 0 0 4rem;
+}
+.hero__controls {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.hero__arrow {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+.hero__arrow::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+  transform: rotate(45deg);
+  margin: auto;
+}
+.hero__arrow--prev::before {
+  transform: rotate(-135deg);
+}
+.hero__dots {
+  display: flex;
+  gap: 8px;
+}
+.hero__dots .owl-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ccc;
+  border: 0;
+}
+.hero__dots .owl-dot.active {
+  background: #333;
+}

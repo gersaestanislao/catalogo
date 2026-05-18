@@ -1,0 +1,228 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.filtros {
+  padding: 1rem 0;
+}
+@media (width >= 768px) {
+  .filtros {
+    padding: 0;
+  }
+}
+.filtros__head {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #9d2449;
+  padding: 11px 19px;
+  border-radius: 4px;
+  align-items: center;
+  cursor: pointer;
+  color: #9d2449;
+  font-weight: bold;
+}
+@media (width >= 768px) {
+  .filtros__head {
+    display: none;
+  }
+}
+.filtros__head i {
+  color: #9d2449;
+}
+.filtros__head span:nth-child(2),
+.filtros__head .fa-close {
+  display: none;
+}
+.filtros__head--active {
+  background-color: #f5f5f5;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+.filtros__head--active span:nth-child(1),
+.filtros__head--active .fa-filter {
+  display: none;
+}
+.filtros__head--active .fa-close,
+.filtros__head--active span:nth-child(2) {
+  display: block;
+}
+.filtros__head:hover {
+  background-color: #f5f5f5;
+}
+.filtros__head:hover i {
+  color: #9d2449;
+}
+.filtros__title-head {
+  display: none;
+}
+@media (width >= 420px) {
+  .filtros__title-head {
+    display: inline;
+  }
+}
+.filtros__content {
+  display: none;
+  padding: 1rem;
+  border: 1px solid #9d2449;
+  border-top: 0;
+  border-radius: 0 0 1.25rem 1.25rem;
+}
+.filtros__content--active {
+  display: block;
+}
+@media (width >= 768px) {
+  .filtros__content {
+    display: block;
+    border: 0;
+    padding: 0;
+  }
+}
+.filtros__titulo {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+.filtros__content-botons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-direction: column;
+}
+.filtros__content-botons .boton {
+  width: 100%;
+}
+@media (width >= 768px) {
+  .filtros__boton {
+    display: none;
+  }
+}
+.filtros__lista {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (width >= 768px) {
+  .filtros__lista {
+    margin-bottom: 2rem;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-top: 0.5rem;
+  }
+}
+.filtros__group {
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 9px;
+  margin: 0;
+}
+@media (width >= 768px) {
+  .filtros__group {
+    background-color: #f5f5f5;
+    padding: 12px 22px;
+    margin: 12px 0;
+  }
+}
+.filtros__item {
+  padding: 0.2rem 0.75rem;
+  border-radius: 5px;
+  transition: all ease 0.4s;
+}
+@media (width >= 768px) {
+  .filtros__item {
+    padding: 0.5rem 1rem;
+  }
+}
+.filtros__item:hover {
+  background: #e2e2e2;
+}
+.filtros__item:has(input:checked) {
+  background: #e2e2e2;
+}
+.filtros__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+}
+.filtros__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.filtros__name {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.filtros__box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #611232;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.filtros__input:checked + .filtros__box {
+  background-color: #7a0f2b;
+  border-color: #7a0f2b;
+}
+.filtros__input:checked + .filtros__box::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.filtros-activos {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+.filtros-activos__label {
+  font-weight: 600;
+}
+.filtros-activos__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.filtros-activos__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  background: #f1f1f1;
+  text-decoration: none;
+  border: 1px solid #611232;
+  transition: all ease 0.2s;
+  color: #611232;
+  font-size: 14px;
+}
+.filtros-activos__chip:hover {
+  background: #e2e2e2;
+  color: #611232;
+}
+.filtros-activos__remove {
+  opacity: 0.7;
+}
+.filtros-activos__clear {
+  margin-left: auto;
+  text-decoration: underline;
+}

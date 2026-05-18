@@ -1,0 +1,67 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+.features {
+ background-color: white;
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
+
+  &__media {
+    border-radius: 4px;
+   overflow: hidden;
+
+
+    img {
+      width: 100%;
+
+      display: block;
+      height: 34rem;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    max-width: 500px;
+
+  }
+
+  &__text {
+    text-align: left;
+  }
+
+
+  // Desktop
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+
+    &__content {
+      max-width: 100%;
+      padding: 8px 32px;
+    }
+  }
+
+  // Variante invertida
+  &--reverse {
+    @media (min-width: 1024px) {
+      direction: rtl;
+
+      .feature__content,
+      .feature__media {
+        direction: ltr;
+      }
+    }
+  }
+}

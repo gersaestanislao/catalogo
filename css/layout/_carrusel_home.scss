@@ -1,0 +1,93 @@
+
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+
+.cursos_home {
+  background-color: rgba(vars.$color-imss, .05);
+  padding: 42px 0;
+  max-width: 1440px;
+  margin: 48px auto;
+  border-radius: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+  @include mix.respond-to(md) {
+    padding: 48px 36px;
+    margin: 54px auto;
+  }
+
+  &__wrapp {
+    display: flex;
+    gap: 2rem;
+    align-items: baseline;
+
+    a {
+      display: none;
+
+      @include mix.respond-to(md) {
+        display: initial;
+      }
+
+    }
+  }
+
+
+// Carrusel 
+.courses {
+  position: relative;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__carousel {
+    padding: 0 10px; 
+
+
+    @include mix.respond-to(md) {
+      padding: 0 20px; 
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 2;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid #333;
+      border-right: 2px solid #333;
+      margin: auto;
+    }
+
+    &--prev-sm {
+      left: 0;
+
+      &::before {
+        transform: rotate(-135deg);
+      }
+    }
+
+    &--next-sm {
+      right: 0;
+
+      &::before {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+}
+
+  

@@ -1,0 +1,33 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+
+.main {
+  background-color: white;
+  padding: 8px 0 ;
+
+  .container {
+    
+    @include mix.respond-to(lg) {
+      width: 65%;
+      margin:  8rem auto 2rem;
+    }
+  }
+
+
+  &__logo {
+    width: 80px;
+  }
+
+  
+  &__descript {
+    margin-bottom: 36px;
+  }
+
+  h4 {
+    font-size: 28px;
+    font-family: Patria,"noso Sans",Helvetica,Arial,sans-serif;
+  }
+  
+}

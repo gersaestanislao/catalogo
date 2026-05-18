@@ -1,0 +1,14 @@
+.wrapp-body {
+  background-color: #f2f2f2;
+}
+
+.wrapp-section {
+  padding: 0 22px 22px;
+  background-color: white;
+}
+
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,17 @@
+.breadcrumb {
+  padding-bottom: 0;
+  font-size: 14px;
+  margin-left: 16px;
+}
+
+
+@media (width >= 768px) {
+  .breadcrumb {
+    font-size: 16px;
+    margin-left: 16px;
+  }
+}
+
+.breadcrumb > li + li:before {
+  font-size: 16px;
+}

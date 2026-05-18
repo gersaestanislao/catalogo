@@ -1,0 +1,235 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.curso-card {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px #cdcdcd solid;
+  position: relative;
+}
+.curso-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+.curso-card__permalink {
+  color: #404041;
+  text-decoration: none;
+}
+.curso-card__permalink:hover {
+  color: #404041;
+  text-decoration: none;
+}
+.curso-card__permalink:hover h4 {
+  text-decoration: underline;
+}
+.curso-card__media {
+  position: relative;
+}
+.curso-card__image {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+}
+@media (width >= 768px) {
+  .curso-card__image {
+    height: 100px;
+  }
+}
+.curso-card__fecha {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  background: #fff;
+  padding: 0.3rem;
+  border-radius: 0 0 4px 4px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+@media (width >= 768px) {
+  .curso-card__fecha {
+    left: 1.5rem;
+    padding: 0.3rem 1rem;
+  }
+}
+.curso-card__fecha-label {
+  display: block;
+}
+.curso-card__fecha-date {
+  font-weight: 700;
+  line-height: 1.1;
+  display: block;
+  color: #13322e;
+}
+.curso-card__body {
+  padding: 1.5rem;
+}
+@media (width >= 768px) {
+  .curso-card__body {
+    padding: 2rem 2rem 3rem;
+  }
+}
+.curso-card__link {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+.curso-card__link i {
+  color: #13322e;
+  font-size: 28px;
+  transition: all 0.4s ease;
+}
+.curso-card__link:hover i {
+  color: #404041;
+}
+.curso-card__link--cerrado {
+  display: none;
+}
+.curso-card__title {
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+@media (width >= 768px) {
+  .curso-card__title {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+}
+.curso-card__title--micro {
+  min-height: 85px;
+}
+.curso-card__status {
+  font-size: 16px;
+  margin: 16px 0;
+}
+.curso-card__status--abierto {
+  display: none;
+}
+.curso-card__status i {
+  display: none;
+}
+.curso-card__status--cerrado {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.curso-card__status--cerrado i {
+  display: initial;
+  color: #a57f2c;
+}
+.curso-card__status--cerrado p {
+  text-align: left;
+}
+.curso-card__tag-status {
+  position: absolute;
+  top: 0;
+  background: #0c814b;
+  font-size: 16px;
+  padding: 1px 15px;
+  left: 16px;
+  text-transform: capitalize;
+  color: white;
+  border-radius: 0 0 4px 4px;
+}
+.curso-card__tag-status--cerrado {
+  background: grey;
+}
+.curso-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+.curso-card__list-item {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+.curso-card__list-item i {
+  color: #005d4f;
+  margin-right: 8px;
+}
+.curso-card__dirigido {
+  margin-bottom: 1rem;
+}
+.curso-card__dirigido strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.curso-card__perfiles-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+.curso-card__tags-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.curso-card__tag {
+  background: #00796730;
+  padding: 0.25rem 0.5rem 0.25rem 0.7rem;
+  font-size: 12px;
+  position: relative;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  font-weight: 500;
+}
+.curso-card__tag::before {
+  content: "";
+  height: 100%;
+  width: 4px;
+  position: absolute;
+  left: -1px;
+  top: 0;
+}
+.curso-card__tag--enfermeria {
+  background-color: rgba(6, 143, 212, 0.1);
+}
+.curso-card__tag--enfermeria::before {
+  background-color: #068fd4;
+}
+.curso-card__tag--medico {
+  background-color: rgba(209, 130, 12, 0.1);
+}
+.curso-card__tag--medico::before {
+  background-color: #d1820c;
+}
+.curso-card__tag--directivo {
+  background-color: rgba(142, 15, 184, 0.1);
+}
+.curso-card__tag--directivo::before {
+  background-color: #8e0fb8;
+}
+.curso-card__tag--docente {
+  background-color: rgba(29, 14, 159, 0.1);
+}
+.curso-card__tag--docente::before {
+  background-color: #1d0e9f;
+}
+.curso-card__tag--multidisciplinario {
+  background-color: rgba(209, 4, 158, 0.1);
+}
+.curso-card__tag--multidisciplinario::before {
+  background-color: #d1049e;
+}
+.curso-card--abierto {
+  border-top: 4px solid #006455;
+}
+.curso-card--cerrado {
+  border-top: 4px solid #006455;
+}

@@ -1,0 +1,116 @@
+.courses {
+  position: relative;
+}
+.courses__wrapper {
+  position: relative;
+}
+.courses__carousel {
+  padding: 0 40px;
+}
+.courses__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+.courses__arrow::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+  margin: auto;
+}
+.courses__arrow--prev-sm {
+  left: 0;
+}
+.courses__arrow--prev-sm::before {
+  transform: rotate(-135deg);
+}
+.courses__arrow--next-sm {
+  right: 0;
+}
+.courses__arrow--next-sm::before {
+  transform: rotate(45deg);
+}
+
+/* CARD */
+.course-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.course-card__media {
+  position: relative;
+  height: 160px;
+}
+.course-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.course-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+}
+.course-card__badge strong {
+  display: block;
+  color: #7a0f2b;
+}
+.course-card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.course-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+.course-card__clave {
+  font-size: 0.9rem;
+  color: #555;
+}
+.course-card__profiles {
+  margin-top: auto;
+}
+.course-card__label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: #666;
+}
+.course-card__tag {
+  display: inline-block;
+  background: #f2f2f2;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  position: relative;
+}
+.course-card__tag::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #e6a23c;
+  border-radius: 6px 0 0 6px;
+}

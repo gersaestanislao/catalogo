@@ -1,0 +1,30 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.main {
+  background-color: white;
+  padding: 8px 0;
+}
+@media (width >= 1024px) {
+  .main .container {
+    width: 65%;
+    margin: 8rem auto 2rem;
+  }
+}
+.main__logo {
+  width: 80px;
+}
+.main__descript {
+  margin-bottom: 36px;
+}
+.main h4 {
+  font-size: 28px;
+  font-family: Patria, "noso Sans", Helvetica, Arial, sans-serif;
+}

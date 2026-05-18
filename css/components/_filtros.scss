@@ -1,0 +1,259 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+.filtros {
+  padding: 1rem 0;
+
+  @include mix.respond-to(md) {
+    padding: 0;
+ }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid vars.$color-primario--suave;
+    padding: 11px 19px;
+    border-radius: 4px;
+    align-items: center;
+    cursor: pointer;
+    color: vars.$color-primario--suave;
+    font-weight: bold;
+
+    @include mix.respond-to(md) {
+      display: none;
+   }
+
+    i {
+      color: vars.$color-primario--suave;
+    }
+
+    span:nth-child(2),
+    .fa-close {
+      display: none;
+    } 
+        
+   
+    &--active {
+      background-color: vars.$gris-suave;
+      border-bottom: 0;
+      border-radius: 4px 4px 0 0;
+
+      span:nth-child(1),
+      .fa-filter {
+        display: none;
+      }
+
+      .fa-close,
+      span:nth-child(2) {
+        display: block;
+      }
+
+    }
+
+    &:hover {
+      background-color: vars.$gris-suave;
+
+      i {
+        color:vars.$color-primario--suave;
+      }
+    }
+
+  }
+
+  &__title-head {
+    display: none;
+
+    @include mix.respond-to(sm) {
+      display: inline;
+   }
+  }
+
+  &__content{ 
+    display: none;
+    padding: 1rem;
+    border: 1px solid vars.$color-primario--suave;
+    border-top: 0;
+    border-radius: 0 0 1.25rem 1.25rem;
+
+    &--active {
+      display: block;
+    }
+
+    @include mix.respond-to(md) {
+      display: block;
+      border: 0;
+      padding: 0;
+   }
+  }
+
+  &__titulo {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 9px;
+  }
+
+  &__content-botons {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    flex-direction: column;
+
+    .boton {
+      width: 100%;
+    }
+  }
+
+  &__boton {
+    @include mix.respond-to(md) {
+      display: none;
+   }
+  }
+
+  &__lista {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @include mix.respond-to(md) {
+      margin-bottom: 2rem;
+      flex-direction: column;
+      gap: .35rem;
+      padding-top: .5rem;
+
+   }
+
+  }
+
+  &__group {
+    background-color: transparent;
+    padding:5px;
+    border-radius: 9px;
+    margin: 0;
+
+    @include mix.respond-to(md) {
+      background-color: vars.$gris-suave;
+      padding:12px 22px;
+      margin: 12px 0;
+    }
+  }
+
+
+  &__item {
+    padding: .2rem .75rem;
+    border-radius: 5px;
+    transition: all ease .4s;
+
+    @include mix.respond-to(md) {
+      padding: .5rem 1rem;
+   }
+
+
+      &:hover {
+        background: vars.$gris-medio;
+      }
+
+      &:has(input:checked) {
+        background: vars.$gris-medio;
+      }
+  }
+
+
+  &__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  &__box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid vars.$color-primario;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  &__input:checked + &__box {
+    background-color: #7a0f2b;
+    border-color: #7a0f2b;
+  }
+
+  &__input:checked + &__box::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.filtros-activos {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+
+  &__label {
+    font-weight: 600;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+
+  &__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 7px 16px;
+    border-radius: 20px;
+    background: #f1f1f1;
+    text-decoration: none;
+    border: 1px solid vars.$color-primario;
+    transition: all ease .2s;
+    color: vars.$color-primario;
+    font-size: 14px;
+
+    &:hover {
+      background: #e2e2e2;
+      color: vars.$color-primario;
+    }
+  }
+
+  &__remove {
+    opacity: .7;
+  }
+
+  &__clear {
+    margin-left: auto;
+    text-decoration: underline;
+  }
+
+}
+
+

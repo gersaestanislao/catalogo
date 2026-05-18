@@ -1,0 +1,281 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+
+.curso-card {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px #cdcdcd solid;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    &__permalink {
+      color: vars.$color-texto;
+      text-decoration: none;
+
+      &:hover {
+        color: vars.$color-texto;
+        text-decoration: none;
+
+        h4 {
+          text-decoration: underline;
+        }
+      }
+    }
+  
+    &__media {
+      position: relative;
+    }
+  
+    &__image {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+      display: block;
+
+      @include mix.respond-to(md) {
+          height: 100px;
+      }
+    }
+  
+    &__fecha {
+      position: absolute;
+      top: 0;
+      left: 1.5rem;
+      background: #fff;
+      padding: 0.3rem;
+      border-radius: 0 0 4px 4px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-size: 14px;
+     
+      @include mix.respond-to(md) {
+        left: 1.5rem;
+        padding: 0.3rem 1rem;
+       
+      }
+  
+      &-label {
+        display: block;
+      }
+  
+      &-date {
+        font-weight: 700;
+        line-height: 1.1;
+        display: block;
+        color: vars.$color-primario;
+      }
+    }
+  
+    &__body {
+      padding: 1.5rem;
+
+      @include mix.respond-to(md) {
+         padding: 2rem 2rem 3rem;
+      }
+    }
+
+    &__link {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+       
+      i {
+        color: vars.$color-primario;
+        font-size: 28px;
+        transition: all .4s ease;
+      }
+
+      &:hover {
+        i {
+          color: vars.$color-texto;
+        }
+      }
+
+      &--cerrado {
+        display: none;
+      }
+    }
+
+
+    &__title {
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 600;
+      margin: 0;
+      margin-bottom: .5rem;
+      text-align: left;
+
+      @include mix.respond-to(md) {
+        font-size: 16px;
+        line-height: 1.3;
+     }
+
+    }
+
+    &__title--micro {
+      min-height: 85px;
+    }
+
+    &__status {
+      font-size: 16px;
+      margin: 16px 0;
+
+      &--abierto {
+        display: none;
+      }
+
+      i {
+        display: none;
+      }
+
+      &--cerrado {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+
+        i {
+          display: initial;
+          color: vars.$color-secundario;
+        }
+
+        p {
+          text-align: left;
+        }
+      }
+    }
+
+    &__tag-status {
+      position: absolute;
+      top: 0;
+      background: #0c814b;
+      font-size: 16px;
+      padding: 1px 15px;
+      left: 16px;
+      text-transform: capitalize;
+      color: white;
+      border-radius: 0 0 4px 4px;
+
+      &--cerrado {
+        background: grey;
+      }
+    }
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0; 
+    }
+
+    &__list-item {
+      margin-bottom: 8px;
+      font-size: 16px;
+
+      i {
+        color: vars.$color-imss;
+        margin-right: 8px;
+      }
+    }
+  
+    &__dirigido {
+      margin-bottom: 1rem;
+
+      strong {
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+    }
+  
+    &__perfiles {
+  
+      &-label {
+       font-size: 14px;
+        font-weight: 700;
+      }
+    }
+
+    &__tags {
+      @include mix.respond-to(md) {
+       
+      }
+    }
+    
+    &__tags-content {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: .5rem;
+    }
+  
+    &__tag {
+      background: #00796730;
+      padding: 0.25rem 0.5rem .25rem .7rem;
+      font-size: 12px;
+      position: relative;
+      border-radius: .2rem;
+      overflow: hidden;
+      font-weight: 500;
+
+      &::before {
+        content: '';
+        height: 100%;
+        width: 4px;
+        position: absolute;
+        left: -1px;
+        top: 0;
+      }
+
+      &--enfermeria {
+        background-color: rgba( vars.$enfermeria, 0.1);
+
+        &::before {
+          background-color: vars.$enfermeria;
+        }
+      }
+      &--medico {
+        background-color: rgba( vars.$medico, 0.1);
+
+        &::before {
+          background-color: vars.$medico;
+        }
+      }
+      &--directivo {
+        background-color: rgba( vars.$directivo, 0.1);
+
+        &::before {
+          background-color: vars.$directivo;
+        }
+      }
+      &--docente {
+        background-color: rgba( vars.$docente, 0.1);
+
+        &::before {
+          background-color: vars.$docente;
+        }
+      }
+      &--multidisciplinario {
+        background-color: rgba( vars.$multidisciplinario, 0.1);
+
+        &::before {
+          background-color: vars.$multidisciplinario;
+        }
+      }
+    }
+  
+    &--abierto {
+      border-top: 4px solid #006455;
+    }
+  
+    &--cerrado {
+      border-top: 4px solid #006455;
+    }
+  }

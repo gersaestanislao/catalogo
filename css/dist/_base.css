@@ -1,0 +1,223 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+a:focus {
+  color: #242424 !important;
+  text-decoration: none !important;
+}
+
+.sub-navbar {
+  top: 4rem;
+  padding: 1rem 0;
+}
+.sub-navbar .navbar-toggler {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  border: 0;
+}
+@media (min-width: 991px) {
+  .sub-navbar .navbar-toggler {
+    display: none;
+  }
+}
+.sub-navbar .navbar-toggler::before {
+  content: "menú";
+  font-size: 12px;
+  color: white;
+}
+.sub-navbar .navbar-toggler i {
+  color: white;
+  font-size: 3.5rem;
+}
+.sub-navbar .container {
+  justify-content: flex-start;
+}
+
+.sub-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 18px;
+  margin-right: 10rem !important;
+}
+
+.sub-navbar .navbar-toggler {
+  padding: 0;
+}
+
+@media (max-width: 991px) {
+  .sub-navbar .navbar-collapse {
+    text-align: center;
+    margin-bottom: 2rem !important;
+  }
+
+  .nav-link .dropdown-toggle {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-nav > li > .dropdown-menu {
+    display: block;
+    background: transparent;
+    width: 100%;
+    text-align: center;
+    box-shadow: none;
+    border: 0;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    width: 100%;
+    color: #e2e2e2;
+  }
+
+  .navbar a {
+    color: white !important;
+  }
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+
+  .navbar-nav > li {
+    border-top: 1px solid #ffffff1f;
+    padding: 0 0 0.75rem;
+  }
+}
+.sub-navbar .navbar-brand {
+  width: auto;
+}
+@media (min-width: 991px) {
+  .sub-navbar .navbar-brand {
+    width: 266px;
+  }
+}
+@media (min-width: 1200px) {
+  .sub-navbar .navbar-brand {
+    width: 440px;
+  }
+}
+@media (min-width: 1400px) {
+  .sub-navbar .navbar-brand {
+    width: 700px;
+  }
+}
+
+.nav-link.dropdown-toggle {
+  position: relative;
+}
+.nav-link.dropdown-toggle::after {
+  content: "";
+  font-family: "Font Awesome 7 Free";
+  font-weight: 900;
+  margin-left: 0.5rem;
+  display: inline-block;
+  color: #9d2449;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  padding: 0;
+}
+
+@media (min-width: 991px) {
+  .dropdown-item {
+    padding: 16px !important;
+  }
+  .dropdown-item:hover {
+    background-color: #e2e2e2;
+  }
+}
+hr.red {
+  margin: 8px 0 36px;
+}
+hr.red--simple {
+  margin: 7px 0 10px;
+  overflow: hidden;
+}
+
+.logos--white {
+  background-color: red;
+  -webkit-mask-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ea/Logotipo_del_IMSS.svg);
+  mask-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ea/Logotipo_del_IMSS.svg);
+  filter: saturate(0) brightness(5);
+}
+
+p {
+  line-height: 1.7;
+}
+
+h2 {
+  font-size: 27px;
+}
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 38px;
+  }
+}
+
+h3 {
+  font-size: 28px;
+}
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 22px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+}
+@media (min-width: 1200px) {
+  h4 {
+    font-size: 24px;
+  }
+}
+
+p {
+  font-size: 15px;
+}
+@media (min-width: 1200px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+ul {
+  font-size: 16px;
+}
+@media (min-width: 1200px) {
+  ul {
+    font-size: 18px;
+  }
+}
+
+h1 {
+  font-size: 26px;
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 42px;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@media (min-width: 991px) {
+  .container {
+    width: 1440px;
+  }
+}

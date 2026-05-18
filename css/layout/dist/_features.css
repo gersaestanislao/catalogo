@@ -1,0 +1,60 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.features {
+  background-color: white;
+}
+.features .container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+.feature__media {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.feature__media img {
+  width: 100%;
+  display: block;
+  height: 34rem;
+  object-fit: cover;
+}
+.feature__content {
+  max-width: 500px;
+}
+.feature__text {
+  text-align: left;
+}
+@media (min-width: 1024px) {
+  .feature {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .feature__content {
+    max-width: 100%;
+    padding: 8px 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .feature--reverse {
+    direction: rtl;
+  }
+  .feature--reverse .feature__content,
+.feature--reverse .feature__media {
+    direction: ltr;
+  }
+}

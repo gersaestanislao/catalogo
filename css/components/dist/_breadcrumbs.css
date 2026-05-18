@@ -1,0 +1,24 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.breadcrumb {
+  padding-bottom: 0;
+  font-size: 14px;
+  margin-left: 16px;
+}
+@media (width >= 768px) {
+  .breadcrumb {
+    font-size: 16px;
+  }
+}
+
+.breadcrumb > li + li:before {
+  font-size: 16px;
+}

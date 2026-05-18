@@ -1,0 +1,456 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+.course-hero {
+    position: relative;
+    border-top: 4px vars.$color-imss solid;
+    display: flex;
+    flex-direction: column;
+
+    @include mix.respond-to(lg) {
+      flex-direction: row;
+    }
+
+
+    &__inner {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+
+      @include mix.respond-to(lg) {
+        text-align: left;
+      }
+    }
+
+    // Tags  
+    .curso-card__tags {
+      display: flex;
+      justify-content: center;
+
+      @include mix.respond-to(lg) {
+       display: none;
+      }
+    }
+
+    .curso-card__tag {
+      background-color: white;
+
+      @include mix.respond-to(lg) {
+        font-size: 15px;
+      }
+
+    }
+
+
+    //formulario desketop
+      .course-form {
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 4rem;
+
+
+        @include mix.respond-to(lg) {
+          padding: 0 4rem;
+        }
+
+        @include mix.respond-to(xl) {
+          width: 25%;
+        }
+
+
+      }
+
+
+    &__btn {
+      margin-top: 18px;
+      @include mix.respond-to(lg) {
+        display: none;
+      }
+    }
+
+  
+    /* Imagen */
+    &__media {
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        text-align: left;
+  
+   
+  
+        @include mix.respond-to(lg) {
+          height: 380px;
+        }
+      }
+    }
+  
+    /* Overlay degradado */
+    &__overlay {
+      position: absolute;   
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);  
+      z-index: 1;
+
+      @include mix.respond-to(md){
+        background: linear-gradient(
+          90deg,
+          rgb(3, 55, 47) 20%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+    }
+  
+    /* Contenido */
+    &__content {
+      position: absolute;
+      z-index: 2; 
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      max-width: 90%;
+      margin: auto;
+  
+
+  
+      @include mix.respond-to(lg) {
+        max-width: 100%;
+        margin: 0 0 0 47px;
+        top: 45%;
+      }
+    }
+  
+    /* Badge */
+    &__badge {
+        background: #dedede;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: auto;
+        padding: 8px 24px;
+        display: flex;
+        gap: 8px;
+        text-align: center;
+        z-index: 4;
+        justify-content: center;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+
+
+  
+      @include mix.respond-to(md) {
+        background: white;
+        left: 4rem;
+        right: initial;
+        flex-direction: column;
+        gap:0; 
+        border-radius: 0 0 4px 4px;
+      }
+  
+      span {
+        display: block;
+        font-size: 14px;
+
+        @include mix.respond-to(md) {
+            font-size: 12px;
+            line-height: 1;
+        }
+      }
+  
+      strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        color: vars.$color-imss;
+
+        @include mix.respond-to(md) {
+            font-size: 22px;
+        }
+      }
+    }
+  
+    /* Título */
+    &__title {
+      color: #fff;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 2px 2px 3px rgba(0,0,0,0.35);
+
+      @include mix.respond-to(md) {
+        text-align: left;
+        max-width: 70%;
+        margin-bottom: 24px;
+      }
+    }
+
+  }
+  
+  .course-content {
+    margin: 40px 0;
+    padding: 0 16px 16px;
+
+
+    &__interaction {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+
+    &__icon-share {
+      font-size:28px;
+      color: vars.$color-primario;
+      text-decoration: none;
+    }
+
+    /* Tabs */
+    .course-tabs {
+      display: flex;
+      gap: 40px;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 24px;
+      width: 100%;
+
+
+      @include mix.respond-to(md) {
+        width: 70%;
+      }
+  
+      &__btn {
+        background: none;
+        border: none;
+        font-size: 12px;
+        font-weight: 600;
+        padding-bottom: 12px;
+        cursor: pointer;
+        position: relative;
+
+        @include mix.respond-to(md) {
+          font-size: 14px;
+        }
+  
+        &.is-active {
+          color: #000;
+        }
+  
+        &.is-active::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: 100%;
+          height: 4px;
+          background: vars.$color-primario;
+        }
+      }
+    }
+  
+    /* Grid */
+    &__grid {
+      display: grid;
+      gap: 32px;
+  
+      @include mix.respond-to(lg) {
+        grid-template-columns: 2.5fr 1fr;
+        align-items: start;
+        gap: 64px;
+      }
+    }
+  
+    /* Main content */
+    &__main {
+
+  
+      h4 {
+        font-size: 16px;
+        margin-top: 24px;
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+  
+      p {
+        text-align: left;
+      }
+  
+      ul {
+        padding-left: 18px;
+        text-align: left;
+  
+        li {
+          margin-bottom: 6px;
+        }
+      }
+    }
+  
+    /* Sidebar */
+    &__sidebar {
+      @include mix.respond-to(lg) {
+        position: sticky;
+        top: 180px;
+      }
+    }
+  }
+  
+  /* Tabs content */
+  .course-tab {
+    display: none;
+  
+    &.is-active {
+      display: block;
+    }
+  }
+  
+  /* Form */
+  .course-form {
+
+
+    &--cerrado {
+      background: vars.$gris-uno;
+      color: rgb(47, 47, 47);
+
+      input, 
+      select,
+      button {
+        opacity: .6;
+        cursor: default;
+        pointer-events: none;
+
+      }
+    }
+
+    &--abierto  {
+      background: vars.$color-imss;
+      color: white;
+    }
+    
+  
+    &__title {
+      font-size: 16px;
+      margin-bottom: 8px;
+      margin-top: 0;
+      text-align: center;
+
+      @include mix.respond-to(lg) {
+          font-size: 20px;
+          margin-bottom: 16px;
+      }
+
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: #404041;
+  
+    }
+  
+    input,
+    select {
+      padding: 9px 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 12px;
+
+      @include mix.respond-to(lg) {
+        padding:  12px;
+        font-size: 14px;
+    }
+    }
+  
+      button {
+        margin-top: 8px;
+        border-radius: 8px;
+        border: 1px solid vars.$color-primario;
+        background-color: vars.$color-primario;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+    
+        &:hover {
+          color: white;
+          background-color: vars.$color-secundario;
+        }
+      }
+  }
+
+  
+  .course-info {
+    background: #f2f2f2;
+    border-radius: 16px;
+    padding: 24px;
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.25); 
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.25);
+
+    @include mix.respond-to(lg) {
+      margin-top: -24px;
+    }
+
+
+    //tags 
+    .curso-card__tags-content {
+      margin: 12px;
+    }
+    
+    .curso-card__tag {
+      background-color: white;
+    }
+  
+    &__title,
+    &__label
+    {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+  
+    &__icon {
+       color: vars.$color-imss;
+    }
+
+    &__date {
+      margin-left: 22px;
+    }
+
+
+    &__profiles {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+  
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap:7px;
+      margin-bottom: 0;
+
+      @include mix.respond-to(lg) {
+        grid-template-columns: 1fr 1fr;
+    }
+    }
+  
+  
+    /* FULL WIDTH ITEM */
+    &__full {
+      margin-top: 8px;
+  
+      h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+  
+      p {
+        font-size: 20px;
+      }
+    }
+  }
