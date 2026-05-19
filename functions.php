@@ -65,6 +65,7 @@ require_once $deps_inc_path . '/post-types-taxonomies.php';
 
 require_once $deps_inc_path . '/acf-fields-home.php';
 require_once $deps_inc_path . '/acf-fields-courses.php';
+require_once $deps_inc_path . '/acf-fields-page.php';
 
 
 
