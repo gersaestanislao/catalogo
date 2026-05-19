@@ -6,37 +6,51 @@
 
 function edmiss_consultar_api() {
 
-    // Nombre del cache
     $transient_name = 'edmiss_api_cursos';
+    $backup_option  = 'edmiss_api_cursos_backup';
 
-    // Revisar si ya existe cache
+    // usar cache normal
     $data = get_transient($transient_name);
 
-    if ($data !== false) {
+    if ($data !== false && is_array($data)) {
         return $data;
     }
 
-    // Si no hay cache → consultar API
-    $response = wp_remote_get('https://innovaedu.imss.gob.mx/app2025/api_cat_sied.php');
+    // API con timeout controlado
+    $response = wp_remote_get(
+        'https://innovaedu.imss.gob.mx/app2025/api_cat_sied.php',
+        [
+            'timeout'     => 15,
+            'redirection' => 3,
+            'sslverify'   => false,
+        ]
+    );
 
+    // Backup
     if (is_wp_error($response)) {
-        return false;
+        $backup = get_option($backup_option);
+        return is_array($backup) ? $backup : [];
     }
 
     $body = wp_remote_retrieve_body($response);
-
     $body = preg_replace('/^\xEF\xBB\xBF/', '', $body);
 
     $json = json_decode($body, true);
 
-    if (!$json || !isset($json['data'])) {
-        return false;
+    // Si la respuesta no sirve, usar backup
+    if (!$json || empty($json['data']) || !is_array($json['data'])) {
+        $backup = get_option($backup_option);
+        return is_array($backup) ? $backup : [];
     }
 
+    // Normalizar data
     $data = array_map('edmiss_normalizar_item', $json['data']);
 
-    // guardar cache por 1 hora
+    // Guardar cache normal
     set_transient($transient_name, $data, HOUR_IN_SECONDS);
+
+    // Guardar último backup bueno
+    update_option($backup_option, $data, false);
 
     return $data;
 }

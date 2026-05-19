@@ -1,86 +1,63 @@
-const mq = window.matchMedia("(min-width: 768px)");
+document.addEventListener('DOMContentLoaded', function () {
+  const mq = window.matchMedia('(min-width: 768px)');
+  const form = document.querySelector('.catalogo__form');
+  const loader = document.getElementById('loader-filtros');
 
-function filtrosDesktop(e) {
-
-  if (!e.matches) return;
-
-  document.querySelectorAll('.filtros input').forEach(el => {
-
-    el.addEventListener('change', () => {
-      el.closest('form').submit()
-    });
-
-  });
-
-  document.querySelectorAll('.filtros input').forEach(el => {
-    el.addEventListener('change', () => {
-  
-      const loader = document.getElementById('loader-filtros');
-  
-      if(loader){
-        loader.classList.add('is-active');
-        loader.setAttribute('aria-hidden', 'false');
-      }
-  
-      el.closest('form').submit();
-    });
-  });
-
-}
-
-filtrosDesktop(mq);
-mq.addEventListener('change', filtrosDesktop);
-
-
-  const trigger = document.getElementById('trigger-accordion')
-
-  trigger.addEventListener('click', function() {  
-      const accordion = this.nextElementSibling;
-      const elemento = this;
-  
-      elemento.classList.toggle('filtros__head--active');
-      accordion.classList.toggle('filtros__content--active');
-  });
-
-
-
-  document.addEventListener('DOMContentLoaded', function () {
-
-    const loader = document.getElementById('loader-filtros');
-    const form = document.querySelector('.catalogo__form');
-
+  const showLoader = () => {
     if (!loader) return;
 
-    // ======================
-    // Mostrar loader
-    // ======================
-    const showLoader = () => {
-        loader.classList.add('is-active');
-        loader.setAttribute('aria-hidden', 'false');
-    };
+    loader.classList.add('is-active');
+    loader.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('is-loading');
+  };
 
-    // ======================
-    // Submit del form (filtros)
-    // ======================
-    if (form) {
-        form.addEventListener('submit', function () {
-            showLoader();
-        });
-    }
+  const hideLoader = () => {
+    if (!loader) return;
 
-    // ======================
-    // Paginación
-    // ======================
-    document.addEventListener('click', function (e) {
+    loader.classList.remove('is-active');
+    loader.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('is-loading');
+  };
 
-        const link = e.target.closest('.page-numbers');
+  const submitWithReplace = () => {
+    if (!form) return;
 
-        if (!link) return;
+    showLoader();
 
-        // evitar loader en enlaces tipo current
-        if (link.classList.contains('current')) return;
+    const formData = new FormData(form);
+    const params = new URLSearchParams();
 
-        showLoader();
+    formData.forEach((value, key) => {
+      if (value !== '') {
+        params.append(key, value);
+      }
     });
 
-});
+    const action = form.getAttribute('action') || window.location.pathname;
+    const query = params.toString();
+    const url = query ? `${action}?${query}` : action;
+
+    window.location.replace(url);
+  };
+
+  // Filtros desktop: autosubmit sin agregar historial
+  document.querySelectorAll('.filtros input').forEach((input) => {
+    input.addEventListener('change', function () {
+      if (!mq.matches) return;
+      submitWithReplace();
+    });
+  });
+
+  // Submit normal del formulario también sin agregar historial
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      submitWithReplace();
+    });
+  }
+
+  // Restaurar loader al volver con navegador
+  window.addEventListener('pageshow', function () {
+    hideLoader();
+  });
+}); 

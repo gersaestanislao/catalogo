@@ -40,7 +40,7 @@ get_template_part('components/navbar');
           Los ciclos de mejora en una organización se dan siempre acompañados de un óptimo desarrollo profesional continuo, descarga la Solicitud de Capacitación de Educación Presencial en Salud.
         </p>
 
-        <a class="onsite-health__button" href="#">
+        <a class="btn boton boton--primario btn-sm" href="#">
           Ver catálogo de cursos
         </a>
       </div>
