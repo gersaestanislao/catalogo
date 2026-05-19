@@ -1285,6 +1285,139 @@ h1 {
   font-size: 20px;
 }
 
+.onsite-health {
+  padding: 3rem 1rem;
+  color: #404041;
+}
+.onsite-health__container {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+}
+.onsite-health__title {
+  margin: 0 0 2rem;
+  color: #404041;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.onsite-health__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 3rem 4rem;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 2rem;
+  background-color: #E6EFEA;
+  border-radius: 2rem;
+}
+@media (max-width: 900px) {
+  .onsite-health__hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+.onsite-health__content {
+  max-width: 420px;
+}
+@media (max-width: 900px) {
+  .onsite-health__content {
+    max-width: none;
+  }
+}
+.onsite-health__text {
+  margin: 0 0 2rem;
+}
+.onsite-health__figure {
+  margin: 0;
+}
+.onsite-health__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/7;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+@media (max-width: 600px) {
+  .onsite-health__image {
+    aspect-ratio: 4/3;
+  }
+}
+.onsite-health__downloads {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .onsite-health__downloads {
+    grid-template-columns: 1fr;
+  }
+}
+.onsite-health__info {
+  padding: clamp(2rem, 5vw, 3rem);
+  background-color: #fff;
+  border-radius: 2rem;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+.onsite-health__info p {
+  margin: 0 0 1rem;
+}
+.onsite-health__subtitle {
+  margin: 0 0 0.75rem;
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 800;
+}
+.onsite-health__contact {
+  margin-top: 2rem;
+}
+
+.onsite-health-card {
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  align-items: stretch;
+  min-height: 96px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #a28b8d;
+  border-radius: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.onsite-health-card:hover, .onsite-health-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  color: white;
+  text-decoration: none;
+}
+.onsite-health-card:focus-visible {
+  outline: 3px solid rgba(165, 127, 44, 0.45);
+  outline-offset: 3px;
+}
+.onsite-health-card__icon {
+  display: grid;
+  place-items: center;
+  background-color: #7d5f60;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.onsite-health-card__text {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: left;
+}
+.onsite-health-card__download {
+  display: grid;
+  place-items: center;
+  padding-inline: 1.5rem;
+  font-size: 2rem;
+}
+
 .catalogo {
   padding: 0rem 1.5rem;
   max-width: 1440px;

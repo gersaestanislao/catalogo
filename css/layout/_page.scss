@@ -1,0 +1,153 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+.onsite-health {
+    padding: 3rem 1rem;
+    color: vars.$color-texto;
+  
+    &__container {
+      width: min(100%, 1180px);
+      margin-inline: auto;
+    }
+  
+    &__title {
+      margin: 0 0 2rem;
+      color: vars.$color-texto;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+  
+    &__hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 3rem 4rem;
+      align-items: center;
+      padding: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 2rem;
+      background-color: vars.$color-imss-light;
+      border-radius: 2rem;
+  
+      @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  
+    &__content {
+      max-width: 420px;
+  
+      @media (max-width: 900px) {
+        max-width: none;
+      }
+    }
+  
+    &__text {
+      margin: 0 0 2rem;
+    }
+  
+    &__figure {
+      margin: 0;
+    }
+  
+    &__image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      border-radius: 1.5rem;
+  
+      @media (max-width: 600px) {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  
+    &__downloads {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+  
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    &__info {
+      padding: clamp(2rem, 5vw, 3rem);
+      background-color: #fff;
+      border-radius: 2rem;
+      font-size: 1.0625rem;
+      line-height: 1.8;
+  
+      p {
+        margin: 0 0 1rem;
+      }
+    }
+  
+    &__subtitle {
+      margin: 0 0 0.75rem;
+      color: #000;
+      font-size: 1.125rem;
+      font-weight: 800;
+    }
+  
+    &__contact {
+      margin-top: 2rem;
+    }
+  }
+  
+  .onsite-health-card {
+    display: grid;
+    grid-template-columns: 88px 1fr auto;
+    align-items: stretch;
+    min-height: 96px;
+    overflow: hidden;
+    color: #fff;
+    background-color: #a28b8d;
+    border-radius: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(#000, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(#000, 0.25);
+      color: white;
+      text-decoration: none;
+    }
+  
+    &:focus-visible {
+      outline: 3px solid rgba(vars.$color-secundario, 0.45);
+      outline-offset: 3px;
+    }
+  
+    &__icon {
+      display: grid;
+      place-items: center;
+      background-color: #7d5f60;
+      font-size: 4rem;
+      color: rgba(#fff, 0.75);
+    }
+  
+    &__text {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      font-weight:600;
+      text-decoration: none;
+      text-align: left;
+      
+    }
+  
+    &__download {
+      display: grid;
+      place-items: center;
+      padding-inline: 1.5rem;
+      font-size: 2rem;
+    }
+    
+  
+  }
