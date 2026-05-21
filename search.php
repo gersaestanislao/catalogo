@@ -17,9 +17,6 @@ include('header.php'); ?>
     <div class="container">
 
 
-    <!-- breadcrumb  -->
-    <?php include get_template_directory() . '/single-parts/breadcrumbs.php'; ?>
- 
 
         <!-- Header -->
         <header class="search__header">

@@ -62,7 +62,7 @@ while ($cursos->have_posts()) : $cursos->the_post();
 
     if (empty($implementaciones_vigentes)) continue;
 
-    // 🔽 ordenar por implementación
+    // ordenar por implementación
     usort($implementaciones_vigentes, function($a, $b){
         preg_match('/-I(\d+)-/', $a['clavecorta'], $a_match);
         preg_match('/-I(\d+)-/', $b['clavecorta'], $b_match);
@@ -70,7 +70,7 @@ while ($cursos->have_posts()) : $cursos->the_post();
         return intval($a_match[1] ?? 0) - intval($b_match[1] ?? 0);
     });
 
-    // 🔽 seleccionar implementación
+    // seleccionar implementación
     $seleccion = null;
 
     foreach ($implementaciones_vigentes as $imp) {
@@ -84,7 +84,7 @@ while ($cursos->have_posts()) : $cursos->the_post();
         $seleccion = $implementaciones_vigentes[0];
     }
 
-    // 👉 ESTA VARIABLE ES CLAVE PARA TUS MÓDULOS
+    //Mod
     $resultado = [$seleccion];
 
     $esta_abierto = true;
@@ -107,7 +107,7 @@ while ($cursos->have_posts()) : $cursos->the_post();
     <a class="curso-card__permalink" href="<?php the_permalink(); ?>">
         <div class='curso-card__body'>
 
-            <h4 class='curso-card__title'>  <?php echo wp_trim_words(get_the_title(), 8, '…'); ?>    </h4> 
+            <h4 class='curso-card__title'>  <?php echo wp_trim_words(get_the_title(), 7, '…'); ?>    </h4> 
 
             <!--  Status -->
             <?php include get_template_directory() . '/components/moduls/status.php'; ?>

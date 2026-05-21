@@ -14,12 +14,12 @@
     <div class="help-widget__actions">
 
       <!-- Soporte -->
-      <a href="#" class="help-widget__action help-widget__action--support" aria-label="Contactar soporte">
+      <a href="https://innovacioneducativa.imss.gob.mx/mesa/"  target="_blank" class="help-widget__action help-widget__action--support" aria-label="Contactar soporte">
       <i class="fa-solid fa-question"></i>
       </a>
 
       <!-- WhatsApp -->
-      <a href="#" class="help-widget__action help-widget__action--whatsapp" aria-label="Contactar por WhatsApp">
+      <a href="https://wa.me/5510712734" class="help-widget__action help-widget__action--whatsapp" aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
 

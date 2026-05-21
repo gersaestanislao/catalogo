@@ -4,7 +4,7 @@
                      <input type="search"
                      name="s"
                      class="catalogo__input form-control"
-                     placeholder="Busca Cursos ..."
+                     placeholder="Busca algun tema ..."
                      value="<?php echo get_search_query(); ?>">
 
 

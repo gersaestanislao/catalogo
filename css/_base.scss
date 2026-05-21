@@ -6,7 +6,7 @@ body {
 }
 
 a:focus {
-  color: #242424 !important;
+  color: #868686 !important;
   text-decoration: none !important;
 }
 
@@ -49,6 +49,10 @@ a:focus {
   gap: 8px;
   padding-left: 18px;
   margin-right: 10rem !important;
+
+  &:hover {
+    color: white;
+  }
 }
 
 

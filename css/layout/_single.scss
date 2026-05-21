@@ -362,6 +362,12 @@
       color: #404041;
   
     }
+
+    label {
+      color: white;
+      font-size: 12px;
+      text-align: center;
+    }
   
     input,
     select {
@@ -369,6 +375,7 @@
       border-radius: 8px;
       border: none;
       font-size: 12px;
+      width: 100%;
 
       @include mix.respond-to(lg) {
         padding:  12px;
@@ -376,7 +383,7 @@
     }
     }
   
-      button {
+      .btn { 
         margin-top: 8px;
         border-radius: 8px;
         border: 1px solid vars.$color-primario;

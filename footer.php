@@ -94,15 +94,6 @@ get_template_part('components/help-widget');
   </div>
 </footer>
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <!-- JS principal -->
   <script src="https://framework-gb.cdn.gob.mx/gm/v3/assets/js/gobmx.js"></script>
   <script src="<?php bloginfo('template_url') ?>/js/jquery.js"></script>

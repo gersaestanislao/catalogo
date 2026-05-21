@@ -8,7 +8,7 @@ body {
 }
 
 a:focus {
-  color: #242424 !important;
+  color: #868686 !important;
   text-decoration: none !important;
 }
 
@@ -48,6 +48,9 @@ a:focus {
   gap: 8px;
   padding-left: 18px;
   margin-right: 10rem !important;
+}
+.sub-navbar .navbar-brand:hover {
+  color: white;
 }
 
 .sub-navbar .navbar-toggler {
@@ -1219,12 +1222,18 @@ h1 {
   gap: 12px;
   color: #404041;
 }
+.course-form label {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
 .course-form input,
 .course-form select {
   padding: 9px 12px;
   border-radius: 8px;
   border: none;
   font-size: 12px;
+  width: 100%;
 }
 @media (width >= 1024px) {
   .course-form input,
@@ -1233,7 +1242,7 @@ h1 {
     font-size: 14px;
   }
 }
-.course-form button {
+.course-form .btn {
   margin-top: 8px;
   border-radius: 8px;
   border: 1px solid #13322e;
@@ -1242,7 +1251,7 @@ h1 {
   font-weight: 600;
   cursor: pointer;
 }
-.course-form button:hover {
+.course-form .btn:hover {
   color: white;
   background-color: #a57f2c;
 }
@@ -2189,14 +2198,17 @@ h1 {
 }
 @media (max-width: 768px) {
   .help-widget {
-    max-width: 280px;
+    max-width: 290px;
   }
   .help-widget__container {
-    padding: 1.5rem;
+    padding: 1rem 2rem 0.25rem;
   }
   .help-widget__content {
     max-width: 100%;
     margin-bottom: 1rem;
+  }
+  .help-widget__title {
+    font-size: 16px;
   }
   .help-widget__text {
     display: none;
