@@ -1,5 +1,5 @@
 <div 
-  class="course-form course-form--<?= $esta_abierto ? 'abierto' : 'cerrado'; ?>" 
+  class="course-form course-form--abierto" 
   id="course-form"
 >
 
@@ -100,7 +100,7 @@
 
   <?php else : ?>
 
-    <p class="course-form__message">
+    <p class="course-form__message text-center">
       Este curso no cuenta con inscripciones abiertas por el momento.
     </p>
 
