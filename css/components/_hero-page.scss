@@ -1,0 +1,66 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+.onsite-health {
+    
+    &__hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 3rem;
+      background-color: vars.$color-imss-light;
+      border-radius: 2rem;
+      box-shadow: vars.$box-shadow;
+  
+      @include mix.respond-to(md) {
+        margin-bottom: 6rem;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: 3rem 4rem;
+      }
+    }
+  
+    &__content {
+      max-width: 420px;
+  
+      @media (max-width: 900px) {
+        max-width: none;
+      }
+
+    }
+  
+    &__text {
+      margin: 0 0 2rem;
+    }
+  
+    &__figure {
+      margin: 0;
+    }
+  
+    &__image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      border-radius: 1.5rem;
+
+       @include mix.respond-to(md) {
+        aspect-ratio: 4/ 2;
+       }
+    }
+  
+    &__downloads {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+  
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  
+  }

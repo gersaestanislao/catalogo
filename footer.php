@@ -110,6 +110,8 @@ get_template_part('components/help-widget');
   <script src="<?php bloginfo('template_url') ?>/js/main.js"></script>
   <script src="<?php bloginfo('template_url') ?>/js/carrusel.js"></script>
   <script src="<?php bloginfo('template_url') ?>/js/tabs.js"></script>
+  <script src="<?php bloginfo('template_url') ?>/js/modal.js"></script>
+  <script src="<?php bloginfo('template_url') ?>/js/accordion.js"></script>
  
 
 

@@ -217,6 +217,19 @@ h1 {
   }
 }
 
+.bg-imss--light {
+  background-color: #E6EFEA !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -1144,11 +1157,18 @@ h1 {
   text-align: left;
 }
 .course-content__main ul {
-  padding-left: 18px;
+  padding: 2rem 2rem 4rem;
   text-align: left;
+  list-style: none;
 }
 .course-content__main ul li {
-  margin-bottom: 6px;
+  padding: 16px 0;
+  display: flex;
+  gap: 1rem;
+}
+.course-content__main ul li i {
+  color: #a57f2c;
+  font-size: 3rem;
 }
 @media (width >= 1024px) {
   .course-content__sidebar {
@@ -1285,19 +1305,21 @@ h1 {
   font-size: 20px;
 }
 
-.onsite-health {
-  padding: 2rem 0rem;
-  max-width: 360px;
+.onsite-health__container {
+  width: 360px;
   margin: auto;
 }
-@media (width >= 768px) {
-  .onsite-health {
-    max-width: 100%;
+@media (width >= 420px) {
+  .onsite-health__container {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 2rem;
   }
 }
-.onsite-health__container {
-  width: min(100%, 1180px);
-  margin-inline: auto;
+@media (width >= 1024px) {
+  .onsite-health__container {
+    padding: 0;
+  }
 }
 .onsite-health__title {
   margin: 1rem 0 2rem;
@@ -1313,141 +1335,12 @@ h1 {
 }
 .onsite-health__title--sm {
   font-size: clamp(1.7rem, 4vw, 2.2rem);
-  margin: 1rem 0;
+  margin: 4rem 0 1.5rem;
 }
 @media (width >= 768px) {
   .onsite-health__title--sm {
     margin: 4rem 0 2rem;
   }
-}
-.onsite-health__hero {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
-  padding: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 3rem;
-  background-color: #E6EFEA;
-  border-radius: 2rem;
-}
-@media (width >= 768px) {
-  .onsite-health__hero {
-    margin-bottom: 6rem;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: 3rem 4rem;
-  }
-}
-.onsite-health__content {
-  max-width: 420px;
-}
-@media (max-width: 900px) {
-  .onsite-health__content {
-    max-width: none;
-  }
-}
-.onsite-health__text {
-  margin: 0 0 2rem;
-}
-.onsite-health__figure {
-  margin: 0;
-}
-.onsite-health__image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16/7;
-  object-fit: cover;
-  border-radius: 1.5rem;
-}
-@media (width >= 768px) {
-  .onsite-health__image {
-    aspect-ratio: 4/2;
-  }
-}
-.onsite-health__downloads {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
-}
-@media (max-width: 768px) {
-  .onsite-health__downloads {
-    grid-template-columns: 1fr;
-  }
-}
-.onsite-health__info {
-  padding: clamp(2rem, 5vw, 3rem);
-  background-color: #fff;
-  border-radius: 2rem;
-  font-size: 1.0625rem;
-  line-height: 1.8;
-}
-.onsite-health__info p {
-  margin: 0 0 1rem;
-}
-.onsite-health__subtitle {
-  margin: 0 0 0.75rem;
-  color: #000;
-  font-size: 1.125rem;
-  font-weight: 800;
-}
-.onsite-health__contact {
-  margin-top: 2rem;
-}
-
-.onsite-health-card {
-  display: grid;
-  grid-template-columns: 66px 1fr auto;
-  align-items: stretch;
-  min-height: 96px;
-  overflow: hidden;
-  color: #fff;
-  background-color: #a28b8d;
-  border-radius: 0.9rem;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-@media (width >= 768px) {
-  .onsite-health-card {
-    grid-template-columns: 88px 1fr auto;
-  }
-}
-.onsite-health-card:hover, .onsite-health-card:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  color: white;
-  text-decoration: none;
-}
-.onsite-health-card:focus-visible {
-  outline: 3px solid rgba(165, 127, 44, 0.45);
-  outline-offset: 3px;
-}
-.onsite-health-card__icon {
-  display: grid;
-  place-items: center;
-  background-color: #7d5f60;
-  font-size: 4rem;
-  color: rgba(255, 255, 255, 0.75);
-}
-.onsite-health-card__text {
-  display: flex;
-  align-items: center;
-  padding: 1rem 1.25rem;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: left;
-  font-size: 1.3rem;
-}
-@media (width >= 768px) {
-  .onsite-health-card__text {
-    font-size: 1.8rem;
-  }
-}
-.onsite-health-card__download {
-  display: grid;
-  place-items: center;
-  padding-inline: 1.5rem;
-  font-size: 2rem;
 }
 
 .catalogo {
@@ -2313,6 +2206,314 @@ h1 {
     height: 70px;
     font-size: 30px;
   }
+}
+
+.onsite-health-card {
+  display: grid;
+  grid-template-columns: 66px 1fr auto;
+  align-items: stretch;
+  min-height: 70px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #a28b8d;
+  border-radius: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+@media (width >= 768px) {
+  .onsite-health-card {
+    grid-template-columns: 88px 1fr auto;
+    min-height: 96px;
+  }
+}
+.onsite-health-card:hover, .onsite-health-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  color: white;
+  text-decoration: none;
+}
+.onsite-health-card:focus-visible {
+  outline: 3px solid rgba(165, 127, 44, 0.45);
+  outline-offset: 3px;
+}
+.onsite-health-card__icon {
+  display: grid;
+  place-items: center;
+  background-color: #7d5f60;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.onsite-health-card__text {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: left;
+  font-size: 1.3rem;
+}
+@media (width >= 768px) {
+  .onsite-health-card__text {
+    font-size: 1.8rem;
+  }
+}
+.onsite-health-card__download {
+  display: grid;
+  place-items: center;
+  padding-inline: 1.5rem;
+  font-size: 2rem;
+}
+
+.onsite-health__hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 3rem;
+  background-color: #E6EFEA;
+  border-radius: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+@media (width >= 768px) {
+  .onsite-health__hero {
+    margin-bottom: 6rem;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 3rem 4rem;
+  }
+}
+.onsite-health__content {
+  max-width: 420px;
+}
+@media (max-width: 900px) {
+  .onsite-health__content {
+    max-width: none;
+  }
+}
+.onsite-health__text {
+  margin: 0 0 2rem;
+}
+.onsite-health__figure {
+  margin: 0;
+}
+.onsite-health__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/7;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+@media (width >= 768px) {
+  .onsite-health__image {
+    aspect-ratio: 4/2;
+  }
+}
+.onsite-health__downloads {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .onsite-health__downloads {
+    grid-template-columns: 1fr;
+  }
+}
+
+.onsite-health__info {
+  padding: clamp(2rem, 5vw, 3rem);
+  background-color: #fff;
+  border-radius: 2rem;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  margin-bottom: 2rem;
+}
+@media (width >= 420px) {
+  .onsite-health__info {
+    margin-bottom: 4rem;
+  }
+}
+.onsite-health__info p {
+  margin: 0 0 1rem;
+}
+
+.onsite-activities__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  margin: 0 0 2rem;
+}
+@media (width >= 768px) {
+  .onsite-activities__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0 0 4rem;
+  }
+}
+.onsite-activities__card {
+  padding: clamp(2rem, 4vw, 3rem);
+  background-color: #fff;
+  border-radius: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+
+.educational-offer__container {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+}
+.educational-offer__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+@media (max-width: 900px) {
+  .educational-offer__grid {
+    grid-template-columns: 1fr;
+  }
+}
+.educational-offer__help {
+  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+  max-width: 760px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+@media (width >= 768px) {
+  .educational-offer__help {
+    margin-bottom: 4rem;
+  }
+}
+.educational-offer__help a {
+  color: #13322e;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.platform-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+.platform-modal[hidden] {
+  display: none;
+}
+.platform-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+.platform-modal__content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 420px);
+  padding: clamp(2rem, 4vw, 3rem);
+  background-color: #fff;
+  border-radius: 0.75rem;
+  text-align: center;
+}
+.platform-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+.platform-modal__form {
+  display: grid;
+  gap: 1rem;
+}
+.platform-modal__input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #555;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.platform-modal__link {
+  margin-top: 0.5rem;
+  color: #13322e;
+  text-decoration: underline;
+}
+
+.educational-offer-card {
+  min-height: 230px;
+  padding: 2rem 4rem 5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-accordion__container {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+}
+.faq-accordion__title {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+.faq-accordion__list {
+  display: grid;
+  gap: 1rem;
+}
+.faq-accordion__item {
+  background-color: transparent;
+  border: 1px solid #005d4f;
+  border-radius: 9px;
+}
+.faq-accordion__heading {
+  margin: 0;
+}
+.faq-accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+  color: #005d4f;
+  background-color: transparent;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  font-weight: 800;
+  cursor: pointer;
+}
+.faq-accordion__trigger i {
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+}
+.faq-accordion__trigger:focus-visible {
+  outline: 3px solid rgba(0, 93, 79, 0.35);
+  outline-offset: -3px;
+}
+.faq-accordion__panel {
+  background-color: transparent;
+}
+.faq-accordion__content {
+  padding: 0 3rem 2rem;
+  color: #404041;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.75;
+}
+.faq-accordion__content p {
+  margin: 0 0 1rem;
+}
+.faq-accordion__content p:last-child {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

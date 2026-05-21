@@ -119,7 +119,8 @@ include('header.php'); ?>
                                     <?php include get_template_directory() . '/single-parts/tabs-reglas.php'; ?>
                         
                                     <!--Preguntas F-->
-                                    <?php include get_template_directory() . '/single-parts/faq.php'; ?>
+                                    
+                                    <?php include get_template_directory() . '/single-parts/tab-faq.php'; ?>
 
                                     <hr>
                   

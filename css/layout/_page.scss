@@ -3,19 +3,22 @@
 @use '../mixins' as mix;
 
 .onsite-health {
-    padding: 2rem 0rem;
-    max-width: 360px;
-    margin: auto;
 
-    @include mix.respond-to(md) {
-        max-width: 100%;
-       }
-  
     &__container {
-      width: min(100%, 1180px);
-      margin-inline: auto;
+      width: 360px;
+      margin: auto;
+
+      @include mix.respond-to(sm) {
+        width: 100%;
+        max-width: 1180px;
+        padding: 0 2rem;
+      }
+
+      @include mix.respond-to(lg) {
+        padding: 0;
     }
-  
+  }
+
     &__title {
       margin: 1rem 0 2rem;
       color: vars.$color-texto;
@@ -30,7 +33,7 @@
 
       &--sm {
         font-size: clamp(1.7rem, 4vw, 2.2rem);
-        margin: 1rem 0 ;
+        margin: 4rem 0  1.5rem;
 
         @include mix.respond-to(md) {
             margin: 4rem 0 2rem;
@@ -39,148 +42,5 @@
 
     }
 
-
-  
-    &__hero {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      align-items: center;
-      padding: clamp(2rem, 5vw, 4rem);
-      margin-bottom: 3rem;
-      background-color: vars.$color-imss-light;
-      border-radius: 2rem;
-  
-      @include mix.respond-to(md) {
-        margin-bottom: 6rem;
-        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-        gap: 3rem 4rem;
-      }
-    }
-  
-    &__content {
-      max-width: 420px;
-  
-      @media (max-width: 900px) {
-        max-width: none;
-      }
-
-    }
-  
-    &__text {
-      margin: 0 0 2rem;
-    }
-  
-    &__figure {
-      margin: 0;
-    }
-  
-    &__image {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 7;
-      object-fit: cover;
-      border-radius: 1.5rem;
-
-       @include mix.respond-to(md) {
-        aspect-ratio: 4/ 2;
-       }
-    }
-  
-    &__downloads {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem;
-  
-      @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-      }
-    }
-  
-    &__info {
-      padding: clamp(2rem, 5vw, 3rem);
-      background-color: #fff;
-      border-radius: 2rem;
-      font-size: 1.0625rem;
-      line-height: 1.8;
-  
-      p {
-        margin: 0 0 1rem;
-      }
-    }
-  
-    &__subtitle {
-      margin: 0 0 0.75rem;
-      color: #000;
-      font-size: 1.125rem;
-      font-weight: 800;
-    }
-  
-    &__contact {
-      margin-top: 2rem;
-    }
   }
   
-  .onsite-health-card {
-    display: grid;
-    grid-template-columns: 66px 1fr auto;
-    align-items: stretch;
-    min-height: 96px;
-    overflow: hidden;
-    color: #fff;
-    background-color: #a28b8d;
-    border-radius: 0.9rem;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(#000, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    @include mix.respond-to(md) {
-        grid-template-columns: 88px 1fr auto;
-       }
-  
-    &:hover,
-    &:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(#000, 0.25);
-      color: white;
-      text-decoration: none;
-    }
-  
-    &:focus-visible {
-      outline: 3px solid rgba(vars.$color-secundario, 0.45);
-      outline-offset: 3px;
-    }
-  
-    &__icon {
-      display: grid;
-      place-items: center;
-      background-color: #7d5f60;
-      font-size: 4rem;
-      color: rgba(#fff, 0.75);
-    }
-  
-    &__text {
-      display: flex;
-      align-items: center;
-      padding: 1rem 1.25rem;
-      font-weight:600;
-      text-decoration: none;
-      text-align: left;
-      font-size: 1.3rem;
-
-      @include mix.respond-to(md) {
-        font-size: 1.8rem;
-       }
-      
-    }
-  
-    &__download {
-      display: grid;
-      place-items: center;
-      padding-inline: 1.5rem;
-      font-size: 2rem;
-    }
-    
-  
-  }

@@ -281,11 +281,21 @@
       }
   
       ul {
-        padding-left: 18px;
+        padding: 2rem 2rem 4rem;
         text-align: left;
+        list-style: none;
+
   
         li {
-          margin-bottom: 6px;
+          padding: 16px 0;
+          display: flex;
+          
+          gap: 1rem;
+           
+          i {
+            color: vars.$color-secundario;
+            font-size: 3rem;
+          }
         }
       }
     }

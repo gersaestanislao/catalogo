@@ -38,13 +38,44 @@ get_template_part('components/navbar');
          <!--Módulo Hero interna  -->
         <?php if (get_row_layout() === 'educacion_presencial_salud') : ?>
 
-
           <?php 
           // =======================
           // Hero
           // =======================
           get_template_part('page-parts/hero'); 
           ?>
+
+          <!--Bloque informativo -->
+          <?php elseif (get_row_layout() === 'bloque_informativo') : ?>
+
+          <?php 
+          // =======================
+          // Bloque informativo
+          // =======================
+          get_template_part('page-parts/bloque-informativo'); 
+          ?>
+
+          <!--Dos Bloque informativo -->
+          <?php elseif (get_row_layout() === 'principales_actividades') : ?>
+
+          <?php 
+          // =======================
+          //Dos Bloque informativo
+          // =======================
+          get_template_part('page-parts/dos-bloques-informativos'); 
+          ?>
+
+          <!--Oferta educativba -->
+          <?php elseif (get_row_layout() === 'oferta_educativa') : ?>
+
+          <?php 
+          // =======================
+          //Oferta educatica
+          // =======================
+          get_template_part('page-parts/oferta-educativa'); 
+          ?>
+
+          
 
 
 
@@ -56,9 +87,6 @@ get_template_part('components/navbar');
 <?php endif; ?>
 
 </div>
-
-
-
 
 
 <?php 

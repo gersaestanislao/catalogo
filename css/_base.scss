@@ -247,3 +247,17 @@ h1 {
     width: 1440px;
   }
 }
+
+.bg-imss--light {
+  background-color: #E6EFEA !important;
+}
+
+  
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

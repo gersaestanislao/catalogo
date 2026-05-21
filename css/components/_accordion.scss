@@ -1,0 +1,82 @@
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+
+  
+.faq-accordion {
+
+
+  &__container {
+    width: min(100%, 1180px);
+    margin-inline: auto;
+  }
+
+  &__title {
+    margin: 0 0 1.5rem;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &__list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__item {
+    background-color: transparent;
+    border: 1px solid vars.$color-imss;
+    border-radius: 9px;
+  }
+
+  &__heading {
+    margin: 0;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem;
+    color: vars.$color-imss;
+    background-color: transparent;
+    border: 0;
+    text-align: left;
+    font: inherit;
+    font-size: clamp(1.15rem, 2vw, 1.6rem);
+    font-weight: 800;
+    cursor: pointer;
+
+    i {
+      flex: 0 0 auto;
+      font-size: 1.5rem;
+    }
+
+    &:focus-visible {
+      outline: 3px solid rgba(vars.$color-imss, 0.35);
+      outline-offset: -3px;
+    }
+  }
+
+  &__panel {
+    background-color: transparent;
+  }
+
+  &__content {
+    padding: 0 3rem 2rem;
+    color: vars.$color-texto;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.75;
+
+    p {
+      margin: 0 0 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
