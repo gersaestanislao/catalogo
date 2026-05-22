@@ -1318,6 +1318,19 @@ h1 {
   width: 360px;
   margin: auto;
 }
+.onsite-health__container ul {
+  list-style: none;
+}
+.onsite-health__container ul li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 7 Free";
+  font-weight: 900;
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: #a57f2c;
+  margin: 0 1rem 0 0;
+  font-size: 1.2rem;
+}
 @media (width >= 420px) {
   .onsite-health__container {
     width: 100%;

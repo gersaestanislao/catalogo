@@ -8,6 +8,24 @@
       width: 360px;
       margin: auto;
 
+      ul {
+        list-style: none; 
+
+        li {
+          &::before {
+            content: "\f00c";
+            font-family: "Font Awesome 7 Free";
+            font-weight: 900;
+            display: inline-block;
+            margin-left: .5rem;
+            color: vars.$color-secundario;
+            margin:0  1rem 0 0;
+            font-size: 1.2rem;
+          }
+        }
+
+      }
+
       @include mix.respond-to(sm) {
         width: 100%;
         max-width: 1180px;
