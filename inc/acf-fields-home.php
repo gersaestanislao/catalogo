@@ -342,3 +342,70 @@ add_action('acf/init', function() {
     ]);
 
 });
+
+
+/* =====================================================
+   ACF Fields -  Áreas de la División
+===================================================== */
+
+add_action('acf/init', 'cat_register_home_health_areas_fields');
+
+function cat_register_home_health_areas_fields() {
+
+  if (!function_exists('acf_add_local_field_group')) {
+    return;
+  }
+
+  acf_add_local_field_group([
+    'key' => 'group_home_health_areas',
+    'title' => 'Home - Áreas de la División',
+    'fields' => [
+      [
+        'key' => 'field_home_health_areas_title',
+        'label' => 'Título de la sección',
+        'name' => 'health_areas_title',
+        'type' => 'text',
+        'default_value' => 'Áreas de la División de Educación en Salud',
+      ],
+      [
+        'key' => 'field_home_health_areas_items',
+        'label' => 'Áreas',
+        'name' => 'health_areas_items',
+        'type' => 'repeater',
+        'layout' => 'block',
+        'button_label' => 'Agregar área',
+        'sub_fields' => [
+          [
+            'key' => 'field_home_health_area_icon',
+            'label' => 'Clase de ícono Font Awesome',
+            'name' => 'icon',
+            'type' => 'text',
+            'instructions' => 'Ejemplo: fa-solid fa-book-open',
+          ],
+          [
+            'key' => 'field_home_health_area_title',
+            'label' => 'Título del área',
+            'name' => 'title',
+            'type' => 'text',
+          ],
+          [
+            'key' => 'field_home_health_area_link',
+            'label' => 'Enlace',
+            'name' => 'link',
+            'type' => 'link',
+            'return_format' => 'array',
+          ],
+        ],
+      ],
+    ],
+    'location' => [
+      [
+        [
+            'param' => 'page_template',
+            'operator' => '==',
+            'value' => 'home.php',
+        ],
+      ],
+    ],
+  ]);
+}

@@ -1365,6 +1365,78 @@ h1 {
   }
 }
 
+.health-areas {
+  padding: clamp(3rem, 6vw, 5rem) 1rem;
+  background-color: #fff;
+  padding-bottom: 12rem;
+}
+.health-areas__container {
+  width: min(100%, 1024px);
+  margin-inline: auto;
+}
+.health-areas__title {
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+  color: #404041;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  font-family: "Noto Sans", "Noso Sans", serif, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.health-areas__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+}
+.health-areas__grid a {
+  text-decoration: none;
+}
+@media (max-width: 1100px) {
+  .health-areas__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .health-areas__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.health-areas-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 145px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background-color: #E6EFEA;
+  border-radius: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+.health-areas-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+.health-areas-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #404041;
+  font-size: 2.8rem;
+  line-height: 1;
+}
+.health-areas-card__title {
+  margin: 0;
+  color: #404041;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.25;
+  font-family: "Noto Sans", "Noso Sans", serif, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .catalogo {
   padding: 0rem 1.5rem;
   max-width: 1440px;

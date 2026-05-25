@@ -81,7 +81,7 @@ get_template_part('layout/main');
 // =======================
 // FEATURE
 // =======================
-get_template_part('layout/feature'); 
+get_template_part('layout/health-areas'); 
 ?>
 
 

@@ -1,0 +1,87 @@
+
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+
+.health-areas {
+  padding: clamp(3rem, 6vw, 5rem) 1rem;
+  background-color: #fff;
+  padding-bottom: 12rem;
+
+  &__container {
+    width: min(100%, 1024px);
+    margin-inline: auto;
+  }
+
+  &__title {
+    margin: 0 0 clamp(2rem, 4vw, 3rem);
+    color: vars.$color-texto;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    font-family: 
+    "Noto Sans","Noso Sans",serif,"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
+
+    a {
+        text-decoration: none;
+      }
+    
+
+    @media (max-width: 1100px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.health-areas-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 145px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background-color: vars.$color-imss-light;
+  border-radius: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.1);
+  }
+
+
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: vars.$color-texto;
+    font-size: 2.8rem;
+    line-height: 1;
+  }
+
+  &__title {
+    margin: 0;
+    color: vars.$color-texto;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.25;
+    font-family: 
+    "Noto Sans","Noso Sans",serif,"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+}

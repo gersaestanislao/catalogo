@@ -94,6 +94,18 @@
           </ul>
         </li>
 
+
+        <!-- Quiénes somos -->
+        <li class="nav-item">
+          <a 
+            class="nav-link" 
+            href="<?php echo esc_url( home_url('/quienes-somos/') ); ?>" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            Quiénes somos
+          </a>
+        </li>
+
         <!-- Mesa de ayuda -->
         <li class="nav-item">
           <a 
