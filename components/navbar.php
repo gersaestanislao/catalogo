@@ -100,20 +100,8 @@
           <a 
             class="nav-link" 
             href="<?php echo esc_url( home_url('/quienes-somos/') ); ?>" 
-            target="_blank" 
             rel="noopener noreferrer">
             Quiénes somos
-          </a>
-        </li>
-
-        <!-- Mesa de ayuda -->
-        <li class="nav-item">
-          <a 
-            class="nav-link" 
-            href="<?php echo esc_url('https://innovacioneducativa.imss.gob.mx/mesa/'); ?>" 
-            target="_blank" 
-            rel="noopener noreferrer">
-            Mesa de Ayuda
           </a>
         </li>
 
