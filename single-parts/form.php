@@ -13,13 +13,13 @@
       class="course-form__form"
       name="preregistro_a" 
       id="preregistro_a" 
-      action="http://educacionensalud.imss.gob.mx/microaprendizajes/sied/app/preRegistroWbr/preregistroUsuario.php"  
+      action="/var/www/html/2025/migra/sied/app/preRegistroP/preregistroUsuario.php"  
       method="post"
     >
 
       <input 
         type="hidden" 
-        name="idcur" 
+        name="idcurso" 
         value="<?= esc_attr($imp['id']); ?>"
       >
 
