@@ -20,6 +20,10 @@ $hay_cards = false;
 
 ?>
 
+<?php include get_template_directory() . '/inc/faltantes.php'; ?>
+
+
+
 <?php if (have_posts()) : ?>
 
     <div class="catalogo__grid">
