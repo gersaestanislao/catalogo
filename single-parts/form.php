@@ -10,11 +10,11 @@
   <?php if ($esta_abierto && !empty($imp['id'])) : ?>
 
     <form 
-      class="course-form__form"
-      name="preregistro_a" 
-      id="preregistro_a" 
-      action="/var/www/html/2025/migra/sied/app/preRegistroP/preregistroUsuario.php"  
-      method="post"
+    class="course-form__form"
+    name="preregistro_a"
+    id="preregistro_a"
+    action="http://11.32.41.51/2025/migra/sied/app/preRegistroP/preregistroUsuario.php"
+    method="post"
     >
 
       <input 

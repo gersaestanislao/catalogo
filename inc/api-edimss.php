@@ -18,7 +18,12 @@ function edmiss_consultar_api() {
 
     // API con timeout controlado
     $response = wp_remote_get(
-        'https://innovaedu.imss.gob.mx/app2025/api_cat_sied.php',
+
+        //Productivio
+        //'https://innovaedu.imss.gob.mx/app2025/api_cat_sied.php',
+
+        //Desarrrollo
+        'http://11.32.41.51/74/portalCES/api/api_cat_sied_desarrollo.php',
         [
             'timeout'     => 15,
             'redirection' => 3,
