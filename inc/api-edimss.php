@@ -27,7 +27,7 @@ function edmiss_consultar_api() {
         [
             'timeout'     => 15,
             'redirection' => 3,
-            'sslverify'   => fa
+           'sslverify' => false,
         ]
     );
 
