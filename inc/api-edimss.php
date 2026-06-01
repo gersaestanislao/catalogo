@@ -25,7 +25,7 @@ function edmiss_consultar_api() {
         //Desarrrollo
         //'http://11.32.41.51/74/portalCES/api/api_cat_sied_desarrollo.php',
         [
-            'timeout'     => 0,
+            'timeout'     => 15,
             'redirection' => 3,
             'sslverify'   => fa
         ]

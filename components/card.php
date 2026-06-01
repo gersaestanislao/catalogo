@@ -5,24 +5,15 @@
 global $wp_query;
 
 // ======================================================
-// SOLO EN LOCALHOST (DEV)
-// ======================================================
-
-
-global $wp_query;
-
-// ======================================================
 // INDEX API
 // ======================================================
 
 $cursos_api = edmiss_indexar_cursos();
-$hay_cards = false;
+$hay_cards  = false;
 
 ?>
 
-<?php //include get_template_directory() . '/inc/faltantes.php'; ?>
-
-
+<?php // include get_template_directory() . '/inc/faltantes.php'; ?>
 
 <?php if (have_posts()) : ?>
 
@@ -73,13 +64,13 @@ $hay_cards = false;
                     ? strtotime($imp['finpreregistro'])
                     : false;
 
-                // ignorar implementaciones inválidas
+                // Ignorar implementaciones inválidas
                 if (!$inicio || !$fin) {
                     continue;
                 }
 
                 // ======================================================
-                // IMPLEMENTACIONES ABIERTAS
+                // IMPLEMENTACIONES VIGENTES
                 // ======================================================
 
                 if ($hoy >= $inicio && $hoy <= $fin) {
@@ -87,7 +78,7 @@ $hay_cards = false;
                 }
 
                 // ======================================================
-                // FUTURAS
+                // IMPLEMENTACIONES FUTURAS
                 // ======================================================
 
                 if ($inicio > $hoy) {
@@ -96,7 +87,19 @@ $hay_cards = false;
             }
 
             // ======================================================
-            // ORDENAR FUTURAS
+            // ORDENAR IMPLEMENTACIONES VIGENTES POR I1, I2, I10...
+            // ======================================================
+
+            usort($implementaciones_vigentes, function ($a, $b) {
+
+                preg_match('/-I(\d+)-/', $a['clavecorta'], $a_match);
+                preg_match('/-I(\d+)-/', $b['clavecorta'], $b_match);
+
+                return intval($a_match[1] ?? 0) - intval($b_match[1] ?? 0);
+            });
+
+            // ======================================================
+            // ORDENAR FUTURAS POR FECHA DE APERTURA
             // ======================================================
 
             usort($futuras, function ($a, $b) {
@@ -111,13 +114,43 @@ $hay_cards = false;
 
             $esta_abierto = !empty($implementaciones_vigentes);
 
+            // ======================================================
+            // SELECCIONAR UNA SOLA IMPLEMENTACIÓN VIGENTE
+            // Prioridad:
+            // 1. Vigente con vacantes > 0
+            // 2. Primera vigente como fallback
+            // ======================================================
+
+            $seleccion = null;
+
+            foreach ($implementaciones_vigentes as $imp) {
+
+                $vacantes = isset($imp['vacantes']) ? intval($imp['vacantes']) : 0;
+
+                if ($vacantes > 0) {
+                    $seleccion = $imp;
+                    break;
+                }
+            }
+
+            if (!$seleccion && !empty($implementaciones_vigentes)) {
+                $seleccion = $implementaciones_vigentes[0];
+            }
+
+            // ======================================================
+            // VARIABLE PARA datos_api.php
+            // ======================================================
+            // datos_api.php debe leer $resultado[0]
+            // para no pintar todas las implementaciones.
+
+            $resultado = $seleccion ? [$seleccion] : [];
+
             $hay_cards = true;
-        
 
         ?>
 
             <!-- CARD -->
-            <article class="curso-card curso-card--<?= $esta_abierto ? 'abierto' : 'cerrado'; ?>">
+            <article class="curso-card curso-card--<?= esc_attr($esta_abierto ? 'abierto' : 'cerrado'); ?>">
 
                 <!-- Media -->
                 <div class="curso-card__media">
@@ -169,8 +202,8 @@ $hay_cards = false;
 
         <?php
         echo paginate_links([
-            'total'   => $wp_query->max_num_pages,
-            'current' => max(1, get_query_var('paged')),
+            'total'    => $wp_query->max_num_pages,
+            'current'  => max(1, get_query_var('paged')),
             'add_args' => $_GET
         ]);
         ?>

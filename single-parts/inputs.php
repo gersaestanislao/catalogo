@@ -1,21 +1,30 @@
-<?php if ($esta_abierto && !empty($imp['id'])) : ?>
+
+
+
+<?php
+$implementacion_form = $resultado[0] ?? null;
+?>
+
+<?php if ($esta_abierto && !empty($implementacion_form['id'])) : ?>
 
 <form 
-class="course-form__form"
-name="preregistro_a"
-id="preregistro_a"
-action="http://11.32.41.51/2025/migra/sied/app/preRegistroP/preregistroUsuario.php"
-method="post"
+  class="course-form__form"
+  name="preregistro_a"
+  id="preregistro_a"
+  action="http://11.32.41.51/2025/migra/sied/app/preRegistroP/preregistroUsuario.php"
+  method="post"
 >
 
   <input 
     type="hidden" 
     name="idcurso" 
-    value="<?= esc_attr($imp['id']); ?>"
+    value="<?= esc_attr($implementacion_form['id']); ?>"
   >
 
+
+
   <div class="course-form__field">
-    <label  type="hidden"  class="course-form__label" for="matricula">
+    <label class="course-form__label" for="matricula">
       Matrícula
     </label>
 
@@ -89,6 +98,5 @@ method="post"
 
 </form>
 
-<?php else : ?>
-
 <?php endif; ?>
+
