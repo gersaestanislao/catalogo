@@ -20,14 +20,14 @@ function edmiss_consultar_api() {
     $response = wp_remote_get(
 
         //Productivio
-        //'https://innovaedu.imss.gob.mx/app2025/api_cat_sied.php',
+        'https://innovaedu.imss.gob.mx/app2025/api_cat_sied.php',
 
         //Desarrrollo
-        'http://11.32.41.51/74/portalCES/api/api_cat_sied_desarrollo.php',
+        //'http://11.32.41.51/74/portalCES/api/api_cat_sied_desarrollo.php',
         [
-            'timeout'     => 15,
+            'timeout'     => 0,
             'redirection' => 3,
-            'sslverify'   => false,
+            'sslverify'   => fa
         ]
     );
 
@@ -58,7 +58,29 @@ function edmiss_consultar_api() {
     update_option($backup_option, $data, false);
 
     return $data;
+    
 }
+
+// =====================
+// Validador
+// =====================
+function edmiss_clave_valida($clavecorta) {
+
+    if (empty($clavecorta)) {
+        return false;
+    }
+
+    /*
+     * Estructuras válidas:
+     * CES-IMIHO-I6-26
+     * CES-DAMG-M10-I1-26
+     */
+    return preg_match('/^CES-[A-Z0-9]+(?:-M\d+)?-I\d+-\d{2}$/i', $clavecorta);
+}
+
+
+
+
 
 // =====================
 // Extracción de clave corta
@@ -102,9 +124,22 @@ function edmiss_indexar_cursos(){
 
     $api = edmiss_consultar_api();
 
+    if (empty($api) || !is_array($api)) {
+        return [];
+    }
+
     $cursos = [];
 
     foreach($api as $item){
+
+        if (empty($item['clavecorta'])) {
+            continue;
+        }
+
+        // Ignorar claves con formato inválido
+        if (!edmiss_clave_valida($item['clavecorta'])) {
+            continue;
+        }
 
         $codigo = edmiss_codigo_curso($item['clavecorta']);
 
@@ -113,11 +148,9 @@ function edmiss_indexar_cursos(){
         }
 
         $cursos[$codigo][] = $item;
-
     }
 
     return $cursos;
-
 }
 
 function edmiss_normalizar_item($item){

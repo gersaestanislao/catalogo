@@ -145,7 +145,7 @@
 
         i {
           display: initial;
-          color: vars.$color-secundario;
+          color: vars.$color-imss;
         }
 
         p {
@@ -183,6 +183,15 @@
       i {
         color: vars.$color-imss;
         margin-right: 8px;
+      }
+
+      &--link {
+        text-decoration: underline;
+        transition: all ease .4s;
+
+        &:hover {
+          color: vars.$color-imss;
+        }
       }
     }
   
@@ -273,10 +282,10 @@
     }
   
     &--abierto {
-      border-top: 4px solid #006455;
+      border-top: 4px solid vars.$color-imss;
     }
   
     &--cerrado {
-      border-top: 4px solid #006455;
+      border-top: 4px solid vars.$color-imss;
     }
   }

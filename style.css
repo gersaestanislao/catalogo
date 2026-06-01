@@ -39,7 +39,7 @@ a:focus {
   font-size: 3.5rem;
 }
 .sub-navbar .container {
-  justify-content: flex-start;
+  justify-content: flext;
 }
 
 .sub-navbar .navbar-brand {
@@ -1706,7 +1706,7 @@ h1 {
 }
 .curso-card__status--cerrado i {
   display: initial;
-  color: #a57f2c;
+  color: #005d4f;
 }
 .curso-card__status--cerrado p {
   text-align: left;
@@ -1737,6 +1737,13 @@ h1 {
 .curso-card__list-item i {
   color: #005d4f;
   margin-right: 8px;
+}
+.curso-card__list-item--link {
+  text-decoration: underline;
+  transition: all ease 0.4s;
+}
+.curso-card__list-item--link:hover {
+  color: #005d4f;
 }
 .curso-card__dirigido {
   margin-bottom: 1rem;
@@ -1804,10 +1811,10 @@ h1 {
   background-color: #d1049e;
 }
 .curso-card--abierto {
-  border-top: 4px solid #006455;
+  border-top: 4px solid #005d4f;
 }
 .curso-card--cerrado {
-  border-top: 4px solid #006455;
+  border-top: 4px solid #005d4f;
 }
 
 .filtros {
