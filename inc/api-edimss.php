@@ -69,12 +69,6 @@ function edmiss_clave_valida($clavecorta) {
     if (empty($clavecorta)) {
         return false;
     }
-
-    /*
-     * Estructuras válidas:
-     * CES-IMIHO-I6-26
-     * CES-DAMG-M10-I1-26
-     */
     return preg_match('/^CES-[A-Z0-9]+(?:-M\d+)?-I\d+-\d{2}$/i', $clavecorta);
 }
 

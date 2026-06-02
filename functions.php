@@ -182,3 +182,11 @@ require_once $deps_inc_path . '/xml-feed.php';
  * ======================================================
  */
 require_once $deps_inc_path . '/search.php';
+
+
+/**
+ * ======================================================
+ * DEBUG 
+ * ======================================================
+ */
+require_once get_template_directory() . '/inc/reporte-claves.php';

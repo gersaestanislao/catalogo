@@ -1,7 +1,7 @@
 <?php
-/**
+ /* =====================================================
  * ACF Flexible Content para Plantilla interna
- */
+===================================================== */
 add_action('acf/init', 'cat_register_internal_template_fields');
 
 function cat_register_internal_template_fields() {
