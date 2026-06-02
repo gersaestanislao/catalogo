@@ -139,7 +139,7 @@ include('header.php'); ?>
                                     
 
                                      <!-- Datos dinámicos  API -->
-                                     <?php include get_template_directory() . '/components/moduls/implementaciones.php'; ?> 
+                                     <?php //include get_template_directory() . '/components/moduls/implementaciones.php'; ?> 
 
 
                                 </aside> <!-- //Sidebar-->
