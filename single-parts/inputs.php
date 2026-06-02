@@ -11,7 +11,7 @@ $implementacion_form = $resultado[0] ?? null;
   class="course-form__form"
   name="preregistro_a"
   id="preregistro_a"
-  action="http://11.32.41.51/2025/migra/sied/app/preRegistroP/preregistroUsuario.php"
+  action="https://innovaedu.imss.gob.mx/sied/app/preRegistro/preregistroUsuario.php"
   method="post"
 >
 
