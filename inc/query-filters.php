@@ -1,6 +1,10 @@
 <?php
 
-add_action('pre_get_posts', function($query){
+/**
+ * Filtros principales del catálogo.
+ */
+
+add_action('pre_get_posts', function($query) {
 
     if (is_admin() || !$query->is_main_query()) {
         return;
@@ -24,7 +28,7 @@ add_action('pre_get_posts', function($query){
                 'taxonomy' => 'perfil',
                 'field'    => 'slug',
                 'terms'    => array_map('sanitize_text_field', $_GET['perfil']),
-                'operator' => 'IN'
+                'operator' => 'IN',
             ];
         }
 
@@ -37,22 +41,35 @@ add_action('pre_get_posts', function($query){
 
             [
                 'key'     => 'codigo_api',
-                'compare' => 'EXISTS'
+                'compare' => 'EXISTS',
             ],
 
             [
                 'key'     => 'codigo_api',
                 'value'   => '',
-                'compare' => '!='
-            ]
+                'compare' => '!=',
+            ],
         ];
 
         if (!empty($_GET['estado'])) {
-            $meta_query[] = [
-                'key'     => 'estado_curso',
-                'value'   => sanitize_text_field($_GET['estado']),
-                'compare' => '='
-            ];
+
+            $estado = sanitize_text_field($_GET['estado']);
+
+            if ($estado === 'abierto') {
+                $meta_query[] = [
+                    'key'     => 'tiene_vigente',
+                    'value'   => '1',
+                    'compare' => '=',
+                ];
+            }
+
+            if ($estado === 'cerrado') {
+                $meta_query[] = [
+                    'key'     => 'tiene_vigente',
+                    'value'   => '0',
+                    'compare' => '=',
+                ];
+            }
         }
 
         $query->set('meta_query', $meta_query);
@@ -76,7 +93,7 @@ add_action('pre_get_posts', function($query){
                 'taxonomy' => 'tema',
                 'field'    => 'slug',
                 'terms'    => array_map('sanitize_text_field', $_GET['tema']),
-                'operator' => 'IN'
+                'operator' => 'IN',
             ];
         }
 
@@ -89,22 +106,35 @@ add_action('pre_get_posts', function($query){
 
             [
                 'key'     => 'codigo_api',
-                'compare' => 'EXISTS'
+                'compare' => 'EXISTS',
             ],
 
             [
                 'key'     => 'codigo_api',
                 'value'   => '',
-                'compare' => '!='
-            ]
+                'compare' => '!=',
+            ],
         ];
 
         if (!empty($_GET['estado'])) {
-            $meta_query[] = [
-                'key'     => 'estado_curso',
-                'value'   => sanitize_text_field($_GET['estado']),
-                'compare' => '='
-            ];
+
+            $estado = sanitize_text_field($_GET['estado']);
+
+            if ($estado === 'abierto') {
+                $meta_query[] = [
+                    'key'     => 'tiene_vigente',
+                    'value'   => '1',
+                    'compare' => '=',
+                ];
+            }
+
+            if ($estado === 'cerrado') {
+                $meta_query[] = [
+                    'key'     => 'tiene_vigente',
+                    'value'   => '0',
+                    'compare' => '=',
+                ];
+            }
         }
 
         $query->set('meta_query', $meta_query);
