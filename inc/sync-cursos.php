@@ -2,14 +2,7 @@
 
 /**
  * Sincroniza el estado real de los cursos desde la API hacia WordPress.
- *
- * Este archivo actualiza dos metadatos:
- *
- * - estado_curso: abierto / cerrado
- * - tiene_vigente: 1 / 0
- *
- * La paginación y los filtros deben apoyarse en estos metadatos,
- * no en validaciones dentro del template.
+
  */
 
 function edmiss_sync_api_to_posts($post_type = 'cursos_edmiss') {
@@ -24,9 +17,6 @@ function edmiss_sync_api_to_posts($post_type = 'cursos_edmiss') {
 
     /**
      * 1. Reset preventivo:
-     * Antes de marcar cursos abiertos, todos los posts del CPT quedan cerrados.
-     * Esto evita estados viejos cuando una clave desaparece de la API,
-     * cambia de formato o queda inválida por el validador.
      */
     $posts_reset = get_posts([
         'post_type'      => $post_type,
@@ -49,10 +39,10 @@ function edmiss_sync_api_to_posts($post_type = 'cursos_edmiss') {
     foreach ($posts_reset as $post_id) {
         update_post_meta($post_id, 'estado_curso', 'cerrado');
         update_post_meta($post_id, 'tiene_vigente', '0');
+        update_post_meta($post_id, 'tiene_api', '0');
     }
 
     /**
-     * 2. Recorrer cursos válidos desde la API.
      * edmiss_indexar_cursos() ya debe devolver únicamente claves válidas.
      */
     foreach ($cursos as $codigo => $implementaciones) {
@@ -94,6 +84,8 @@ function edmiss_sync_api_to_posts($post_type = 'cursos_edmiss') {
                 break;
             }
         }
+
+        update_post_meta($post_id, 'tiene_api', '1');
 
         update_post_meta(
             $post_id,

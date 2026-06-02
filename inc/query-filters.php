@@ -2,6 +2,11 @@
 
 /**
  * Filtros principales del catálogo.
+ *
+ * La paginación debe resolverse desde WP_Query.
+ *
+ * - tiene_api filtra posts que sí hacen match con la API.
+ * - tiene_vigente filtra abiertos/cerrados reales.
  */
 
 add_action('pre_get_posts', function($query) {
@@ -48,6 +53,12 @@ add_action('pre_get_posts', function($query) {
                 'key'     => 'codigo_api',
                 'value'   => '',
                 'compare' => '!=',
+            ],
+
+            [
+                'key'     => 'tiene_api',
+                'value'   => '1',
+                'compare' => '=',
             ],
         ];
 
@@ -113,6 +124,12 @@ add_action('pre_get_posts', function($query) {
                 'key'     => 'codigo_api',
                 'value'   => '',
                 'compare' => '!=',
+            ],
+
+            [
+                'key'     => 'tiene_api',
+                'value'   => '1',
+                'compare' => '=',
             ],
         ];
 
