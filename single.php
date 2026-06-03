@@ -138,8 +138,18 @@ include('header.php'); ?>
                                     <?php include get_template_directory() . '/single-parts/info-curso.php'; ?>
                                     
 
-                                     <!-- Datos dinámicos  API -->
-                                     <?php include get_template_directory() . '/components/moduls/implementaciones.php'; ?> 
+                                     <!-- Datos dinámicos  API solo local y QA-->
+
+                                     <?php
+
+                                        if (
+                                            current_user_can('manage_options')
+                                        ) :
+
+                                            include get_template_directory() . '/components/moduls/implementaciones.php';
+                                     
+                                        endif;
+                                        ?>
 
 
                                 </aside> <!-- //Sidebar-->

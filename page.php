@@ -1,7 +1,7 @@
 
 <?php
 /**
- * Template Name: Plantilla interna
+ * Template Name: Plantilla internagit 
  */
 
 // =======================

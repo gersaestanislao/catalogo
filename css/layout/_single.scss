@@ -456,10 +456,6 @@
       grid-template-columns: 1fr;
       gap:7px;
       margin-bottom: 0;
-
-      @include mix.respond-to(lg) {
-        grid-template-columns: 1fr 1fr;
-    }
     }
   
   

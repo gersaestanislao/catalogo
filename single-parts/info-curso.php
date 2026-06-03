@@ -18,7 +18,7 @@
                 <i class="course-info__icon fa-regular fa-calendar" aria-hidden="true"></i>
                 Inscripciones
             </p>
-            <p class="course-info__date"><?php echo esc_html($iniciopreregistro); ?></p>
+            <p class="course-info__date">Del <?php echo esc_html($iniciopreregistro); ?> al <?php echo esc_html($finpreregistro); ?></p>
         </div>
         <?php endif; ?>
 
@@ -26,19 +26,10 @@
         <div class="course-info__item">
             <p class="course-info__label">
                 <i class="course-info__icon fa-regular fa-calendar" aria-hidden="true"></i>
-                Inicio
+                Inicio de curso
             </p>
-            <p class="course-info__date"><?php echo esc_html($fchinic); ?></p>
-        </div>
-        <?php endif; ?>
-
-        <?php if(!empty($vacantes)) : ?>
-        <div class="course-info__item">
-            <p class="course-info__label">
-                <i class="course-info__icon fa-regular fa-address-book" aria-hidden="true"></i>
-                Cupo
-            </p>
-            <p class="course-info__date"><?php echo esc_html($vacantes); ?> lugares</p>
+       
+            <p class="course-info__date">Del <?php echo esc_html($fchinic); ?> al <?php echo esc_html($fchfin); ?></p>
         </div>
         <?php endif; ?>
 
