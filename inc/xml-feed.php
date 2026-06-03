@@ -18,8 +18,6 @@ add_action('template_redirect', function () {
 
         header('Content-Type: text/xml; charset=utf-8');
 
-        delete_transient('edmiss_api_cursos'); // opcional
-
         $cursos_api = edmiss_indexar_cursos();
         $hoy = current_time('Y-m-d');
 

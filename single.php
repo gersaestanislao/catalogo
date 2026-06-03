@@ -139,7 +139,7 @@ include('header.php'); ?>
                                     
 
                                      <!-- Datos dinámicos  API -->
-                                     <?php //include get_template_directory() . '/components/moduls/implementaciones.php'; ?> 
+                                     <?php include get_template_directory() . '/components/moduls/implementaciones.php'; ?> 
 
 
                                 </aside> <!-- //Sidebar-->
@@ -157,6 +157,15 @@ include('header.php'); ?>
 <?php else : ?>
         <p>No hay cursos disponibles.</p>
     <?php endif; ?>
+
+
+
+<?php 
+    // =======================
+    // MODAL Microlecciones
+    // =======================
+    include('single-parts/modal-microlecciones.php'); ?>   
+
 <?php 
 // =======================
 // FOOTER GLOBAL DEL SITIO

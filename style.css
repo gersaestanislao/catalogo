@@ -2514,7 +2514,8 @@ h1 {
 .platform-modal__overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
 }
 .platform-modal__content {
   position: relative;
@@ -2698,6 +2699,72 @@ h1 {
 .calendar-dropdown__link i {
   width: 20px;
   text-align: center;
+}
+
+.micro-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.micro-modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.micro-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+}
+.micro-modal__dialog {
+  position: relative;
+  z-index: 2;
+  width: min(90%, 520px);
+  background: #fff;
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+}
+.micro-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.micro-modal__icon {
+  margin-bottom: 1rem;
+}
+.micro-modal__icon i {
+  font-size: 5rem;
+  color: #0b6b50;
+}
+.micro-modal__title {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.micro-modal__text {
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.micro-modal__button {
+  min-width: 240px;
+  border: 0;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  background: #0b6b50;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
