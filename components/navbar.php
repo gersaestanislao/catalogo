@@ -51,12 +51,22 @@
                  Cursos en línea
               </a>
             </li>
+          
             <li>
               <a 
                 class="dropdown-item" 
                 href="<?php echo esc_url( home_url('/microlecciones/') ); ?>" 
                 rel="noopener noreferrer">
                 Microlecciones
+              </a>
+            </li>
+            <li>
+              <a 
+                class="dropdown-item" 
+                target="_blank"
+                href="https://educast.imss.gob.mx/educast/pasantes/login/index.php" 
+                rel="noopener noreferrer">
+                Plataforma Médicos de pregrado
               </a>
             </li>
           </ul>
