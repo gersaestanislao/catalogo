@@ -1027,20 +1027,24 @@ h1 {
   }
 }
 .course-hero__badge {
-  background: #dedede;
+  background: #f1f1f1;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   margin: auto;
   width: auto;
-  padding: 8px 24px;
+  padding: 2px 24px 6px;
   display: flex;
   gap: 8px;
   text-align: center;
   z-index: 4;
   justify-content: center;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+.course-hero__badge p {
+  margin: 0;
+  font-size: 14px;
 }
 @media (width >= 768px) {
   .course-hero__badge {
@@ -1052,26 +1056,11 @@ h1 {
     border-radius: 0 0 4px 4px;
   }
 }
-.course-hero__badge span {
-  display: block;
-  font-size: 14px;
-}
-@media (width >= 768px) {
-  .course-hero__badge span {
-    font-size: 12px;
-    line-height: 1;
-  }
-}
 .course-hero__badge strong {
   display: block;
   font-size: 14px;
   font-weight: 700;
   color: #005d4f;
-}
-@media (width >= 768px) {
-  .course-hero__badge strong {
-    font-size: 22px;
-  }
 }
 .course-hero__title {
   color: #fff;
@@ -1291,6 +1280,10 @@ h1 {
 }
 .course-info__date {
   margin-left: 22px;
+}
+.course-info__date span {
+  color: #005d4f;
+  font-weight: 500;
 }
 .course-info__profiles {
   display: flex;

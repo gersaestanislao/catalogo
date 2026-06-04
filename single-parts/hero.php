@@ -11,13 +11,9 @@
         </div>
 
         <!-- Badge -->
-
         <div class="course-hero__badge">
-        
-        <span>Inicio de inscripción</span>
-
-            <strong><?php echo esc_html($fecha); ?></strong>
-
+            <p> <strong>Inscripciónes</strong></p>
+            <p> Del <?php echo esc_html($fchinic); ?>  al <?php echo esc_html($fchfin); ?></p>
         </div> <!--// Badge -->
 
         <!-- Sombra-->

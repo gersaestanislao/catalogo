@@ -18,7 +18,12 @@
                 <i class="course-info__icon fa-regular fa-calendar" aria-hidden="true"></i>
                 Inscripciones
             </p>
-            <p class="course-info__date">Del <?php echo esc_html($iniciopreregistro); ?> al <?php echo esc_html($finpreregistro); ?></p>
+            <p class="course-info__date">   
+              Del 
+              <span><?php echo esc_html($iniciopreregistro); ?> </span> 
+              al
+              <span><?php echo esc_html($finpreregistro); ?></span>
+            </p>
         </div>
         <?php endif; ?>
 
@@ -28,8 +33,14 @@
                 <i class="course-info__icon fa-regular fa-calendar" aria-hidden="true"></i>
                 Inicio de curso
             </p>
+
+            <p class="course-info__date">   
+              Del 
+              <span><?php echo esc_html($fchinic); ?> </span>
+              al
+              <span><?php echo esc_html($fchfin); ?></span>
+            </p>
        
-            <p class="course-info__date">Del <?php echo esc_html($fchinic); ?> al <?php echo esc_html($fchfin); ?></p>
         </div>
         <?php endif; ?>
 

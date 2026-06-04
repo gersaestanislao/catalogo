@@ -138,8 +138,7 @@ include('header.php'); ?>
                                     <?php include get_template_directory() . '/single-parts/info-curso.php'; ?>
                                     
 
-                                     <!-- Datos dinámicos  API solo local y QA-->
-git
+                                     <!-- Datos dinámicos  API solo adim-->
                                      <?php
 
                                         if (

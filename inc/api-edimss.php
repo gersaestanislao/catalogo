@@ -208,5 +208,5 @@ function edmiss_formatear_fecha($fecha_raw){
 
     $mes = date('M', $timestamp);
 
-    return date('d', $timestamp) . ', ' . ($meses[$mes] ?? $mes) . ', ' . date('y', $timestamp);
+    return date('d', $timestamp) . '-' . ($meses[$mes] ?? $mes) . '-' . date('y', $timestamp);
 }
