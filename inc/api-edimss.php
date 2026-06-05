@@ -4,6 +4,16 @@
 // Consulta de API
 // =====================
 
+
+add_action('template_redirect', function () {
+    if (
+        isset($_GET['refresh_api'])
+        && is_singular(['cursos_edmiss', 'microlecciones'])
+    ) {
+        delete_transient('edmiss_api_cursos');
+    }
+});
+
 function edmiss_consultar_api() {
 
     $transient_name = 'edmiss_api_cursos';
@@ -25,7 +35,7 @@ function edmiss_consultar_api() {
         //Desarrrollo
         //'http://11.32.41.51/74/portalCES/api/api_cat_sied_desarrollo.php',
         [
-            'timeout'     => 45,
+            'timeout'     => 20,
             'redirection' => 3,
            'sslverify' => false,
         ]
@@ -52,7 +62,7 @@ function edmiss_consultar_api() {
     $data = array_map('edmiss_normalizar_item', $json['data']);
 
     // Guardar cache normal
-    set_transient($transient_name, $data, HOUR_IN_SECONDS);
+    set_transient($transient_name, $data, 5 * MINUTE_IN_SECONDS);
 
     // Guardar último backup bueno
     update_option($backup_option, $data, false);

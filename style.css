@@ -2755,4 +2755,140 @@ h1 {
   cursor: pointer;
 }
 
+.session-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.session-modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.session-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+}
+.session-modal__dialog {
+  position: relative;
+  z-index: 2;
+  width: min(90%, 520px);
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.session-modal__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+}
+.session-modal__icon i {
+  font-size: 5rem;
+  color: #005d4f;
+}
+.session-modal__title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.session-modal__text {
+  margin-bottom: 2rem;
+  color: #555;
+  line-height: 1.6;
+}
+.session-modal__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.session-modal__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 1rem 1.5rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background: #005d4f;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+.session-modal__button:hover {
+  transform: translateY(-2px);
+}
+.session-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.session-modal__close i {
+  font-size: 1.25rem;
+}
+@media (width >= 768px) {
+  .session-modal__dialog {
+    padding: 3rem;
+  }
+  .session-modal__title {
+    font-size: 2.25rem;
+  }
+}
+.session-modal__spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: session-spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+.session-modal__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.session-modal__button:disabled {
+  opacity: 0.85;
+  cursor: wait;
+}
+
+@keyframes session-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body.modal-open {
+  overflow: hidden;
+}
+
 /*# sourceMappingURL=style.css.map */
