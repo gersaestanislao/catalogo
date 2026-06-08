@@ -39,18 +39,19 @@ get_template_part('components/help-widget');
       </ul>
     </div>
 
-    <!-- Columna 2 -->
-    <div class="footer-deps__col">
-      <h5 class="footer-deps__title mb-5">Eduacación a Distancia</h5>
+   <!-- Columna 2 -->
+   <div class="footer-deps__col">
+      <h5 class="footer-deps__title mb-5">Educación a Distancia</h5>
       <ul class="footer-deps__links">
         <li><a href="<?php echo esc_url(home_url('/catalogo/')); ?>">Catálogo de Cursos EDIMSS</a></li>
         <li><a href="<?php echo esc_url(home_url('/microlecciones/')); ?>">Catálogo de Cursos Microlecciones</a></li>
+		<li><a href="https://educast.imss.gob.mx/educast/pasantes/login/index.php" target="_blank">Plataforma Médicos de Pregrado</a></li>
       </ul>
     </div>
 
     <!-- Columna 3 -->
     <div class="footer-deps__col">
-    <h5 class="footer-deps__title mb-5">Eduacación a Presencial</h5>
+    <h5 class="footer-deps__title mb-5">Educación Presencial</h5>
       <ul class="footer-deps__links">
         <li><a target="_blank" href="https://edumed.imss.gob.mx/bCurso/">Catálogo de Cursos</a></li>
         <li><a target="_blank" href="https://edumed.imss.gob.mx/Cursos/">SIPEC</a></li>
