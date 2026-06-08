@@ -31,9 +31,9 @@ $vacantes = isset($imp['vacantes']) ? intval($imp['vacantes']) : 0;
         </li>
     <?php endif; ?>
 
-    <li class="curso-card__list-item">
+    <!-- <li class="curso-card__list-item">
         <i class="fa-regular fa-flag" aria-hidden="true"></i>
         Vacantes: <?php echo esc_html($vacantes); ?>
-    </li>
+    </li> -->
 
 </ul>

@@ -1,5 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
 
+    const params = new URLSearchParams(window.location.search);
+    const hasRefreshApi = params.has('refresh_api');
+  
+    if (hasRefreshApi) {
+      window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+      );
+  
+      return;
+    }
+  
     const modal = document.getElementById('microModal');
   
     if (!modal) return;
