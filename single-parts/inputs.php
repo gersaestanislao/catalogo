@@ -7,11 +7,29 @@ $implementacion_form = $resultado[0] ?? null;
 
 <?php if ($esta_abierto && !empty($implementacion_form['id'])) : ?>
 
+
+<?php
+  // =====================
+// Determinar URL según ambiente
+// =====================
+
+$host = $_SERVER['HTTP_HOST'] ?? '';
+
+if (
+    strpos($host, '11.32.41.51') !== false
+) {
+    $form_url = 'http://10.250.10.166/2025/migra/sied/app/preRegistro/preregistroUsuario.php';
+} else {
+    $form_url = 'https://innovaedu.imss.gob.mx/sied/app/preRegistro/preregistroUsuario.php';
+}
+
+?>
+
 <form 
   class="course-form__form"
   name="preregistro_a"
   id="preregistro_a"
-  action="https://innovaedu.imss.gob.mx/sied/app/preRegistro/preregistroUsuario.php"
+  action="<?php echo esc_url($form_url); ?>"
   method="post"
 >
 

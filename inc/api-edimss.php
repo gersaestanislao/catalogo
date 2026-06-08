@@ -5,6 +5,7 @@
 // =====================
 
 
+//// Refrescar API
 add_action('template_redirect', function () {
     if (
         isset($_GET['refresh_api'])
@@ -13,6 +14,24 @@ add_action('template_redirect', function () {
         delete_transient('edmiss_api_cursos');
     }
 });
+
+
+// URL de API 
+function edmiss_api_url() {
+
+    $host = $_SERVER['HTTP_HOST'] ?? '';
+
+    if (
+        strpos($host, '11.32.41.51') !== false
+    ) {
+        return 'http://11.32.41.51/74/portalCES/api/api_cat_sied_desarrollo.php';
+    }
+
+    return 'https://innovaedu.imss.gob.mx/app2025/api_cat_sied.php';
+}
+
+
+// Consulta API
 
 function edmiss_consultar_api() {
 
@@ -29,16 +48,14 @@ function edmiss_consultar_api() {
     // API con timeout controlado
     $response = wp_remote_get(
 
-        //Productivio
-        'https://innovaedu.imss.gob.mx/app2025/api_cat_sied.php',
-
-        //Desarrrollo
-        //'http://11.32.41.51/74/portalCES/api/api_cat_sied_desarrollo.php',
+        edmiss_api_url(),
+    
         [
             'timeout'     => 20,
             'redirection' => 3,
-           'sslverify' => false,
+            'sslverify'   => false,
         ]
+    
     );
 
     // Backup
