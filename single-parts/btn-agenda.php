@@ -73,7 +73,7 @@ if (!$esta_abierto && !empty($proxima)) :
 ?>
 
 <small>
-    <strong>Próxima inscripcióngit </strong>
+    <strong>Próxima inscripción</strong>
 </small>
 
 <ul class="course-form__prox">
