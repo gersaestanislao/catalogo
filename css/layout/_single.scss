@@ -397,6 +397,42 @@
           background-color: vars.$color-secundario;
         }
       }
+
+
+      &__submit {
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: .75rem;
+    
+        &:disabled,
+        &.is-loading {
+          opacity: .85;
+          cursor: wait;
+          pointer-events: none;
+        }
+    
+      }
+    
+      &__spinner {
+    
+        width: 1.25rem;
+        height: 1.25rem;
+    
+        border: 2px solid rgba(255, 255, 255, .35);
+        border-top-color: #fff;
+    
+        border-radius: 50%;
+    
+        animation: course-form-spin .8s linear infinite;
+    
+        flex-shrink: 0;
+    
+      }
+
+
+
   }
 
   
@@ -471,4 +507,16 @@
         font-size: 20px;
       }
     }
+  }
+
+  @keyframes course-form-spin {
+
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  
   }

@@ -110,9 +110,13 @@ if (
     </select>
   </div>
 
-  <button class="course-form__submit btn" type="submit">
-    Enviar
-  </button>
+  <button 
+  class="course-form__submit btn" 
+  type="submit"
+  data-loading-text="Enviando..."
+>
+  <span class="course-form__submit-text">Enviar</span>
+</button>
 
 </form>
 

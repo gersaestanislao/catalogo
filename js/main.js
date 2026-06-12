@@ -61,3 +61,25 @@ document.addEventListener('DOMContentLoaded', function () {
     hideLoader();
   });
 }); 
+
+
+// formulario 
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('preregistro_a');
+
+  if (!form) return;
+
+  form.addEventListener('submit', function () {
+    const button = form.querySelector('.course-form__submit');
+
+    if (!button) return;
+
+    button.disabled = true;
+    button.classList.add('is-loading');
+
+    button.innerHTML = `
+      <span class="course-form__spinner" aria-hidden="true"></span>
+      <span>${button.dataset.loadingText || 'Enviando...'}</span>
+    `;
+  });
+});

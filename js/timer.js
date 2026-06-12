@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
 	if (!form || !modal || !refreshButton) return;
   
-	const SESSION_LIMIT = 60 * 1000; // 1 minuto
+	const SESSION_LIMIT = 180 * 1000; // 1 minuto
 	let expired = false;
   
 	setTimeout(function () {
