@@ -64,14 +64,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // formulario 
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('preregistro_a');
 
   if (!form) return;
 
-  form.addEventListener('submit', function () {
-    const button = form.querySelector('.course-form__submit');
+  const button = form.querySelector('.course-form__submit');
 
+  const resetSubmitButton = () => {
+    if (!button) return;
+
+    button.disabled = false;
+    button.classList.remove('is-loading');
+
+    button.innerHTML = `
+      <span class="course-form__submit-text">Enviar</span>
+    `;
+  };
+
+  form.addEventListener('submit', function () {
     if (!button) return;
 
     button.disabled = true;
@@ -81,5 +93,9 @@ document.addEventListener('DOMContentLoaded', function () {
       <span class="course-form__spinner" aria-hidden="true"></span>
       <span>${button.dataset.loadingText || 'Enviando...'}</span>
     `;
+  });
+
+  window.addEventListener('pageshow', function () {
+    resetSubmitButton();
   });
 });

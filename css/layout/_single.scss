@@ -408,6 +408,7 @@
     
         &:disabled,
         &.is-loading {
+          background-color: #ccc;
           opacity: .85;
           cursor: wait;
           pointer-events: none;

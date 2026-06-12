@@ -1257,6 +1257,7 @@ h1 {
   gap: 0.75rem;
 }
 .course-form__submit:disabled, .course-form__submit.is-loading {
+  background-color: #ccc;
   opacity: 0.85;
   cursor: wait;
   pointer-events: none;
