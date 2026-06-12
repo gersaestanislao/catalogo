@@ -71,8 +71,32 @@ include('header.php'); ?>
             <!--Calculo de las inplemetaciones  -->
             <?php include get_template_directory() . '/inc/calculo.php'; ?>
 
+
+            <!-- Datos de resplado-->
+            <?php
+                if (empty($resultado) && !empty($implementaciones)) {
+                    if (!empty($futuras)) {
+                        $resultado = [$futuras[0]];
+                    } else {
+                        $resultado = [$implementaciones[0]];
+                    }
+                }
+                ?>
+
+
+
             <!--Variables de datos API -->
             <?php include get_template_directory() . '/inc/variables-datos.php'; ?>
+
+            <!-- Si el curso está cerrado, conservar datos generales -->
+            <?php
+            if (!$esta_abierto) {
+                $iniciopreregistro = '';
+                $finpreregistro    = '';
+                $fchinic           = '';
+                $fchfin            = '';
+            }
+            ?>
 
 
 
@@ -138,7 +162,7 @@ include('header.php'); ?>
                                     <?php include get_template_directory() . '/single-parts/info-curso.php'; ?>
                                     
 
-                                     <!-- Datos dinámicos  API solo adim-->
+                                     <!-- Datos dinámicos  API solo adim--> 
                                      <?php
 
                                         if (
