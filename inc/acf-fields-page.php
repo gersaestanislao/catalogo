@@ -151,6 +151,81 @@ function cat_register_internal_template_fields() {
               ],
             ],
           ],
+          
+
+          // videos 
+          'layout_videos_capacitacion' => [
+          'key' => 'layout_videos_capacitacion',
+          'name' => 'videos_capacitacion',
+          'label' => 'Videos de capacitación',
+          'display' => 'block',
+          'sub_fields' => [
+
+              [
+                  'key' => 'field_videos_titulo',
+                  'label' => 'Título',
+                  'name' => 'titulo',
+                  'type' => 'text',
+                  'default_value' => 'Videos de Capacitación',
+              ],
+
+              [
+                  'key' => 'field_videos_subtitulo',
+                  'label' => 'Subtítulo',
+                  'name' => 'subtitulo',
+                  'type' => 'text',
+                  'default_value' => 'Aulas de Simulación',
+              ],
+
+              [
+                'key' => 'field_videos_items',
+                'label' => 'Videos',
+                'name' => 'videos',
+                'type' => 'repeater',
+                'layout' => 'block',
+                'button_label' => 'Agregar video',
+                'sub_fields' => [
+            
+                    [
+                        'key' => 'field_video_url',
+                        'label' => 'URL del video',
+                        'name' => 'video_url',
+                        'type' => 'url',
+                        'instructions' => 'Usa este campo si el video está alojado en un servidor externo o CDN. Tiene prioridad sobre el archivo MP4.',
+                    ],
+            
+                    [
+                        'key' => 'field_video_archivo',
+                        'label' => 'Archivo MP4',
+                        'name' => 'video',
+                        'type' => 'file',
+                        'mime_types' => 'mp4',
+                        'return_format' => 'array',
+                        'instructions' => 'Úsalo solo si el video se cargará directamente en WordPress.',
+                    ],
+            
+                    [
+                        'key' => 'field_video_poster',
+                        'label' => 'Imagen poster',
+                        'name' => 'poster',
+                        'type' => 'image',
+                        'return_format' => 'array',
+                        'preview_size' => 'medium',
+                        'instructions' => 'Imagen opcional que se mostrará antes de reproducir el video.',
+                    ],
+            
+                    [
+                        'key' => 'field_video_titulo',
+                        'label' => 'Título',
+                        'name' => 'titulo',
+                        'type' => 'text',
+                    ],
+            
+                ],
+            ],
+
+          ],
+      ],
 
           /// Ingreso a plataformas
           'layout_oferta_educativa' => [

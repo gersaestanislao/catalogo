@@ -32,8 +32,8 @@
 
     <p class="micro-modal__text">
 
-    Los cursos de Microlecciones ya no requieren pre-registro. <br> A partir de ahora, podrás acceder a este contenido en modalidad on demand, disponible las 24 horas, los 7 días de la semana.
-
+    A partir de ahora puedes acceder a tu curso inmediatamente después de realizar tu inscripción con tus credenciales de acceso.
+    El contenido estará disponible en modalidad on demand, las 24 horas, los 7 días de la semana.
     </p>
 
     <button

@@ -72,6 +72,17 @@ get_template_part('components/navbar');
           get_template_part('page-parts/oferta-educativa'); 
           ?>
 
+
+          <!--Videos-->
+          <?php elseif (get_row_layout() === 'videos_capacitacion') : ?>
+
+            <?php 
+            // =======================
+            //Videos
+            // =======================
+            get_template_part('page-parts/bloque-videos'); 
+            ?>
+
           
 
 

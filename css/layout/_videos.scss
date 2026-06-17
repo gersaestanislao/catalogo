@@ -1,0 +1,67 @@
+
+// Importación de utilidades base
+@use '../variables' as vars;
+@use '../mixins' as mix;
+
+
+
+
+.training-videos {
+
+  margin-top: 4rem;
+
+  &__heading {
+
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+
+  }
+
+  &__separator {
+
+      margin: 0 .5rem;
+
+  }
+
+  &__grid {
+
+      display: grid;
+      gap: 2rem;
+
+      @include mix.respond-to(md) {
+
+          grid-template-columns: repeat(2, 1fr);
+
+      }
+
+  }
+
+  &__card {
+
+      background: #fff;
+      padding: 2rem;
+      border-radius: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,.08);
+
+  }
+
+  &__media {
+
+      margin-bottom: 1rem;
+
+  }
+
+  &__video {
+      width: 100%;
+      display: block;
+  }
+
+  &__card-title {
+      margin: 0;
+      font-size: 1.125rem;
+      font-weight: 500;
+
+  }
+
+}

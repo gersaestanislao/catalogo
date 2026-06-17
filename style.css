@@ -1460,6 +1460,45 @@ h1 {
   font-family: "Noto Sans", "Noso Sans", serif, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.training-videos {
+  margin-top: 4rem;
+}
+.training-videos__heading {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.training-videos__separator {
+  margin: 0 0.5rem;
+}
+.training-videos__grid {
+  display: grid;
+  gap: 2rem;
+}
+@media (width >= 768px) {
+  .training-videos__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.training-videos__card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+.training-videos__media {
+  margin-bottom: 1rem;
+}
+.training-videos__video {
+  width: 100%;
+  display: block;
+}
+.training-videos__card-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
 .catalogo {
   padding: 0rem 1.5rem;
   max-width: 1440px;
