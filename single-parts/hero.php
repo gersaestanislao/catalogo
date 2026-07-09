@@ -11,10 +11,12 @@
         </div>
 
         <!-- Badge -->
+        <?php if(!empty($fchinic)) : ?>
         <div class="course-hero__badge">
             <p> <strong>Inscripciónes</strong></p>
             <p> Del <?php echo esc_html($fchinic); ?>  al <?php echo esc_html($fchfin); ?></p>
         </div> <!--// Badge -->
+        <?php endif; ?>
 
         <!-- Sombra-->
         <div class="course-hero__overlay"></div>
@@ -24,7 +26,7 @@
 
             <!-- Título -->
             <h1 class="course-hero__title">
-                <?php the_title(); ?>
+                <?php the_title(); ?> 
             </h1>
 
             <!-- Perfíles -->
