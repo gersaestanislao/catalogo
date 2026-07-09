@@ -22,6 +22,18 @@ add_action('acf/init', function() {
                     'rows' => 2
                 ],
 
+                [
+                    'key' => 'field_avaldo',
+                    'label' => 'Avaldo Federación Mexicana de Especialistas y Residentes de Medicina Familiar A.C',
+                    'name' => 'avaldo',
+                    'type' => 'select',
+                    'choices' => [
+                        'si' => 'si',
+                        'no' => 'no',
+                    ],
+                    'default_value' => 'no',
+                ],
+
 
                 [
                     'key' => 'field_acerca',

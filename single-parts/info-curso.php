@@ -5,10 +5,24 @@
         Perfiles
     </h4>
 
+
     <?php 
     $template = get_template_directory() . '/components/moduls/taxonomias-perfiles.php';
     if (file_exists($template)) include $template;
     ?>
+
+<?php if ( get_field('avaldo', $post_id) === 'si' ) : ?>
+    <div class="course-info__item">
+        <p class="course-info__label">
+            <i class="course-info__icon fa-solid fa-certificate"></i>
+            Curso Avalado
+        </p>
+
+        <p class="course-info__date text-left">
+            Por la Federación Mexicana de Especialistas y Residentes de Medicina Familiar A.C.
+        </p>
+    </div>
+<?php endif; ?>
 
     <div class="course-info__grid">
 
