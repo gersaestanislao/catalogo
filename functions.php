@@ -156,9 +156,6 @@ require_once $deps_inc_path . '/media.php';
  *
  * Contiene:
  *
- * - rewrite rules
- * - query vars
- * - feeds XML
  * - selección de implementaciones
  * ======================================================
  */
@@ -175,8 +172,6 @@ require_once $deps_inc_path . '/xml-feed.php';
  * Contiene:
  *
  * - búsqueda solo por títulos
- * - exclusión de attachments
- * - DISTINCT
  * - optimización de resultados
  
  * ======================================================

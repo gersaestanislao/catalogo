@@ -1337,6 +1337,51 @@ h1 {
     transform: rotate(360deg);
   }
 }
+.inscription-status {
+  margin: 0 0 2rem;
+}
+.inscription-status h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+.inscription-status table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #cfcfcf;
+  table-layout: fixed;
+}
+.inscription-status thead th {
+  padding: 1rem 1.25rem;
+  background: #f2f2f2;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid #cfcfcf;
+}
+.inscription-status thead th:first-child {
+  border-right: 2px solid #bfbfbf;
+}
+.inscription-status tbody tr:nth-child(even) {
+  background: #dff2ec;
+}
+.inscription-status tbody tr td {
+  padding: 1rem 1.25rem;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;
+  vertical-align: top;
+}
+.inscription-status tbody tr td:first-child {
+  border-right: 2px solid #bfbfbf;
+  width: 50%;
+}
+.inscription-status tbody tr td:last-child {
+  width: 50%;
+}
+
 .onsite-health__container {
   width: 360px;
   margin: auto;
